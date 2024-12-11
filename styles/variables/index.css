@@ -1,0 +1,19 @@
+:root {
+  --palette-brand-main-darkest: #73648A;
+  --palette-brand-main-dark: #73648A;
+  --palette-brand-main-base: #73648A;
+  --palette-brand-main-light: #73648A;
+  --palette-brand-main-lightest: #73648A;
+
+  --palette-brand-secondary-darkest: #B8860B;
+  --palette-brand-secondary-dark: #B8860B;
+  --palette-brand-secondary-base: #B8860B;
+  --palette-brand-secondary-light: #B8860B;
+  --palette-brand-secondary-lightest: #B8860B;
+
+  --palette-neutral-darkest: #FFFFFF;
+  --palette-neutral-dark: #FFFFFF;
+  --palette-neutral-base: #FFFFFF;
+  --palette-neutral-light: #FFFFFF;
+  --palette-neutral-lightest: #FFFFFF;
+}
