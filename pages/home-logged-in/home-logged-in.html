@@ -1,0 +1,67 @@
+
+<header id="header" class="header header--logged-in">
+  <div id="main-picture"></div>
+</header>
+
+<main>
+
+  <article>
+    <form>
+      <div>
+        <h2>Projeto</h2>
+
+        <fieldset>
+          <label>name of project:</label>
+          <input type="text" />
+        </fieldset>
+
+        <fieldset>
+          <label for="">kind of project:</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="project-type" value="private" checked />
+              <span>private</span>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="project-type" value="shared" />
+              <span>shared</span>
+            </label>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div>
+        <h2>Wallet</h2>
+
+        <fieldset>
+          <label>name of wallet:</label>
+          <input type="text" />
+        </fieldset>
+
+        <fieldset>
+          <label for="">kind of wallet:</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="wallet-type" value="private" checked />
+              <span>private</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="wallet-type" value="shared" />
+              <span>shared</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="actions">
+        <button class="action action--main">
+          next
+        </button>
+      </div>
+    </form>
+  </article>
+</main>
+
+<script src="./pages/home-logged-in/index.js"></script>

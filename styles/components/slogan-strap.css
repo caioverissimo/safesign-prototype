@@ -1,0 +1,14 @@
+.slogan-strap {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--palette-neutral-lightest);
+  font-weight: 200;
+  font-style: italic;
+  background-color: var(--palette-brand-main-lightest);
+}
+
+.slogan-strap__text {
+  max-width: 188px;
+}
