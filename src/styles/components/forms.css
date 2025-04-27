@@ -1,0 +1,136 @@
+.forms {
+  margin: 1rem 0;
+  font-family: 'Nunito';
+
+  input {
+    height: 2rem;
+    padding: 0.25rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--palette-brand-main-darker);
+    border: none;
+    border-radius: 4px;
+    background-color: var(--palette-neutral-lightest);
+
+    @media screen and (min-width: 768px) {
+      height: 2.5rem;
+      padding: 0.5rem;
+    }
+
+    &[type="password"] {
+      font-style: normal;
+    }
+  }
+
+  input {
+    outline: none;
+    /* border: 1px solid #ccc; */
+    border: 1px solid var(--palette-neutral-lightest);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  input:focus,
+  input:active {
+    /* border-color: orange; */
+    border-color: var(--palette-highlight-light);
+    /* box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.4); */
+    box-shadow: 0 0 0 3px rgba(214, 109, 56, 0.4); /* optional soft glow */
+  }
+  
+  input:hover {
+    border-color: darkorange;
+  }
+}
+
+.forms_fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media screen and (min-width: 768px) {
+    gap: 1rem;
+  }
+}
+
+.forms_input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.forms-token {
+  max-width: 260px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 420px;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+.forms-signup, .forms-token {
+  height: 454px;
+
+  @media screen and (min-width: 768px) {
+    height: 594px;
+  }
+}
+
+
+.form-token-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  label {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .form-token-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    input {
+      width: 2.25rem;
+      height: 2.75rem;
+      font-size: 1.25rem;
+      text-align: center;
+      border: 1px solid var(--palette-neutral-lightest);
+      border-radius: 6px;
+      background-color: var(--palette-neutral-lightest);
+      color: var(--palette-brand-main-darker);
+      font-weight: 600;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      font-style: normal;
+
+      @media screen and (min-width: 768px) {
+        width: 3rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
+      }
+
+      &:focus {
+        border-color: var(--palette-highlight-light);
+        box-shadow: 0 0 0 3px rgba(214, 109, 56, 0.4);
+      }
+    }
+  }
+}

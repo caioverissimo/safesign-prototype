@@ -1,0 +1,50 @@
+.button {
+  display: inline-flex;
+  height: 2.5rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+
+  &.button-main {
+    color: var(--palette-neutral-lightest);
+    background-color: var(--palette-brand-main-darkest);
+
+    &.button-main--lg {
+      height: 3.25rem;
+    }
+  }
+
+  
+  &.button-main--outline {
+    color: var(--palette-brand-main-darkest);
+    border: 1px solid var(--palette-brand-main-darkest);
+    background-color: transparent;
+  }
+
+  img {
+    margin-right: 1rem;
+  }
+
+  span {
+    line-height: 1;
+  }
+}
+
+.button--toggle-password {
+  height: 2.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.button-menu {
+  
+}

@@ -1,0 +1,44 @@
+:root {
+  /* BRAND (Base principal azul) — tom principal: #214765 */
+  --palette-brand-main-darkest: #214765;
+  --palette-brand-main-darkest2: #2C5477;
+  --palette-brand-main-darker:  #366E88;
+  --palette-brand-main-base:    #367C88;
+  --palette-brand-main-base:    rgb(54, 124, 136);
+  --palette-brand-main-light:   #366788;
+  --palette-brand-main-lighter: #366188;
+  --palette-brand-main-lightest: #AAD1D8;
+  --palette-brand-main-ultralight: #52AABA;
+  --palette-brand-main-ultralighter: #4E9CB3;
+  --palette-brand-main-ultralighter: rgb(78, 156, 179);
+  --palette-brand-main-tint: #367588;
+
+  /* SECONDARY (Verde de ação) */
+  --palette-brand-secondary-darkest: #2DA853;
+  --palette-brand-secondary-dark:    #2DA853;
+  --palette-brand-secondary-base:    #2DA853;
+  --palette-brand-secondary-light:   #2DA853;
+  --palette-brand-secondary-lightest:#2DA853;
+
+  /* HIGHLIGHT (orange) */
+  --palette-highlight-base: #D66D38;
+  --palette-highlight-base: rgb(214, 109, 56);
+  --palette-highlight-light:    #DF4E10;
+  --palette-highlight-light:    rgb(223, 78, 16);
+
+  /* SUPPORT (Laranja para destaque ou erro) */
+  --palette-support-warning-darkest: #D66D38;
+  --palette-support-warning-base:    #DF4E10;
+
+  /* NEUTRAL — cinzas e brancos */
+  --palette-neutral-darkest:  #A7A7A7;
+  --palette-neutral-dark:     #D3D4D6;
+  --palette-neutral-base:     #D6D3D8;
+  --palette-neutral-light:    #D9D9D9;
+  --palette-neutral-lighter:  #E3E4E6;
+  --palette-neutral-lightest: #F3F4F6;
+
+  /* BACKGROUND / BASES */
+  --palette-surface-white:    #FFFFFF;
+  --palette-surface-gray:     #D3D4D6;
+}
