@@ -10,22 +10,24 @@ export const PageLoader = (() => {
       return;
     }
 
-    const appContainer = document.querySelector('#app-container');
-    if (!appContainer) {
+    // const mainContainer = document.querySelector('#app-container');
+    const mainContainer = document.querySelector('#main');
+
+    if (!mainContainer) {
       console.error('❌ No #app-container found');
       return;
     }
 
     try {
-      await fadeOut(appContainer); // 👉 FADE OUT
+      await fadeOut(mainContainer); // 👉 FADE OUT
 
       const response = await fetch(url);
       const html = await response.text();
 
-      appContainer.innerHTML = html;
+      mainContainer.innerHTML = html;
 
-      window.pageStore.setPage(pageEnum);
-      fadeIn(appContainer); // 👉 FADE IN
+      window.pageStore.set(pageEnum);
+      fadeIn(mainContainer); // 👉 FADE IN
       console.log(`✅ Page loaded: ${pageEnum}`);
     } catch (error) {
       console.error(`❌ Failed to load page: ${pageEnum}`, error);

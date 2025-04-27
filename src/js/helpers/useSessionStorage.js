@@ -14,6 +14,18 @@ export function useSessionStorage(key, initialValue) {
     return value;
   }
 
+    // Check and save initialValue if nothing is stored yet
+    try {
+      const existing = window?.sessionStorage?.getItem(key);
+      
+      if (existing === null && initialValue !== undefined) {
+        const valueToStore = safeStringify(initialValue);
+        window?.sessionStorage?.setItem(key, valueToStore);
+      }
+    } catch (error) {
+      console.error('Failed to initialize sessionStorage item', error);
+    }
+
   function getItem() {
     try {
       const stored = window?.sessionStorage?.getItem(key);

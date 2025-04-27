@@ -5,8 +5,9 @@
   --palette-brand-main-darker:  #366E88;
   --palette-brand-main-base:    #367C88;
   --palette-brand-main-base:    rgb(54, 124, 136);
-  --palette-brand-main-light:   #366788;
-  --palette-brand-main-lighter: #366188;
+  --palette-brand-main-light:   #366188;
+  /* --palette-brand-main-lighter: #366788; */
+  --palette-brand-main-lighter: #367C89;
   --palette-brand-main-lightest: #AAD1D8;
   --palette-brand-main-ultralight: #52AABA;
   --palette-brand-main-ultralighter: #4E9CB3;
@@ -31,6 +32,7 @@
   --palette-support-warning-base:    #DF4E10;
 
   /* NEUTRAL — cinzas e brancos */
+  --palette-neutral-ultradarkest:  #363636;
   --palette-neutral-darkest:  #A7A7A7;
   --palette-neutral-dark:     #D3D4D6;
   --palette-neutral-base:     #D6D3D8;

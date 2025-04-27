@@ -10,6 +10,10 @@ import { setupSideMenu } from '../sidemenu/index.js';
 import { toggleLoader } from '../loader/index.js';
 import { createPageStore } from '../stores/pageStore.js';
 import { autoNavigateOnLoad } from './autoNavigateOnLoad.js'
+import { navigation } from '../pageLoader/navigation.js';
+import { defaultSessionData } from '../data/defaults.js'
+
+const navigator = navigation();
 
 // Declare a global variable to hold your session storage
 let viewportStore;
@@ -19,11 +23,7 @@ export const setupMain = async () => {
   
   window.pageStore = createPageStore();
 
-  window.stepDataStore = useSessionStorage(SESSION_KEYS.STEP_DATA, {
-    register: false,
-    authenticate: false,
-    login: false,
-  });
+  window.stepDataStore = useSessionStorage(SESSION_KEYS.STEP_DATA, defaultSessionData);
 
   await delayByMs(1000);
 
@@ -37,6 +37,13 @@ export const setupMain = async () => {
 
   // Example of setting viewport
   window.viewportStore.set('DESKTOP');
+
+  window.addEventListener('hashchange', () => {
+    const hash = navigator.getRoute();
+    if (hash) {
+      navigator.navigate(hash);
+    }
+  });
 
   await autoNavigateOnLoad();
 };

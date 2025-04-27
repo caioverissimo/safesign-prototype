@@ -24,6 +24,26 @@
     display: block;
   }
 
+  /* .profile {
+    display: none;
+
+    @media screen and ( min-width: 768px) {
+      display: flex;
+    }
+
+    .profile_data {
+      align-items: flex-end;
+      gap: 0.25rem;
+      
+      p {
+        color: var(--palette-neutral-ultradarkest);
+    
+        span {
+          color: var(--palette-brand-main-lighter);
+        }
+      }
+    }
+  } */
 
 
   .button-menu { 

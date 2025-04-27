@@ -5,6 +5,7 @@ export const defaultViewData = {
 };
 
 export const defaultSessionData = {
-  registered: false,
-  authenticated: false,
+  register: false,
+  authenticate: false,
+  login: false,
 };
