@@ -6,12 +6,20 @@ import { useSessionStorage } from '../helpers/useSessionStorage.js';
 import { setupForms } from '../forms/index.js';
 import { setupModals } from '../modals/index.js';
 import { setupUploadArea } from '../uploadarea/index.js';
+import { setupUploadDocs } from '../uploaddocs/index.js';
 import { setupSideMenu } from '../sidemenu/index.js';
 import { toggleLoader } from '../loader/index.js';
 import { createPageStore } from '../stores/pageStore.js';
+import { createStepperProgressStore } from '../stores/stepperProgressStore.js';
 import { autoNavigateOnLoad } from './autoNavigateOnLoad.js'
 import { navigation } from '../pageLoader/navigation.js';
 import { defaultSessionData } from '../data/defaults.js'
+import { setupStepper } from '../stepper/index.js'
+
+import { createUploadDocsStore } from '../stores/uploadDocsStore.js';
+import { setupGeneralNavigations } from '../global/generalNavigations.js';
+import { setupDocDetails } from '../docdetails/index.js';
+import { setupDocumentSignature } from '../documentsignature/index.js';
 
 const navigator = navigation();
 
@@ -25,18 +33,31 @@ export const setupMain = async () => {
 
   window.stepDataStore = useSessionStorage(SESSION_KEYS.STEP_DATA, defaultSessionData);
 
-  await delayByMs(1000);
-
-  setupForms();
-  setupModals();
-  setupUploadArea();
-  setupSideMenu();
-
   // Initialize SessionStorage
   window.viewportStore = useSessionStorage(SESSION_KEYS.VIEWPORT, defaultViewData.viewport);
 
   // Example of setting viewport
   window.viewportStore.set('DESKTOP');
+
+  const stepperProgress = createStepperProgressStore();
+  window.stepperProgress = stepperProgress;
+
+  const uploadDocsStore = createUploadDocsStore();
+  window.uploadDocsStore = uploadDocsStore;
+
+
+  await delayByMs(1000);
+
+  setupForms();
+  setupModals();
+  setupUploadArea();
+  setupUploadDocs();
+  setupSideMenu();
+  setupStepper();
+  setupGeneralNavigations();
+  setupDocDetails();
+  setupDocumentSignature();
+
 
   window.addEventListener('hashchange', () => {
     const hash = navigator.getRoute();
@@ -57,3 +78,32 @@ export const main = async () => {
   await delayByMs(1500);
   toggleLoader();
 };
+
+
+
+// Example of a logout function
+// export async function logout() {
+//   const navigator = navigation();
+  
+//   // Clear login flags
+//   window.stepDataStore.set({
+//     register: false,
+//     authenticate: false,
+//     login: false,
+//   });
+
+//   await navigator.navigate(PageEnums.HOME_LOGGED_OUT);
+// }
+
+// Example of login success function
+// export async function loginSuccess() {
+//   const navigator = navigation();
+  
+//   window.stepDataStore.set({
+//     register: true,
+//     authenticate: true,
+//     login: true,
+//   });
+
+//   await navigator.navigate(PageEnums.HOME_LOGGED_IN);
+// }

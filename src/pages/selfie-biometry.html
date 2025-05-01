@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="main-content">
+    <div class="selfie">
+      <div class="selfie-header">
+        <header class="heading">
+          <h1>SELFIE BIOMETRY</h1>
+          <h3>Validação com <i>selfie</i></h3>
+        </header>
+      </div>
+
+      <div class="selfie-content">
+        <div class="selfie-box">
+          <div class="selfie-box_picture">
+            <img src="./src/assets/selfie-girl-picture.png" alt=""> 
+            <div class="selfie-mask">
+              <img src="./src/assets/four-dashes-rounded-border-mask.svg" alt="">
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button 
+              class="button button-main button-main--lg" 
+              onclick="handleSaveDoc()"
+            >
+                definir destinatário
+            </button>
+          </div>
+        </div>
+
+        <div class="selfie-picture">
+          <img src="./src/assets/face-recognition-picture.png" alt="">  
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<aside>
+  <div class="container">
+    <div class="progress-navigation-buttons">
+      <button class="button button-highlight button-highlight--outline button-highlight--left" onclick="goToRecipientRegistrationPage()">
+        cadastrar destinatários
+      </button>
+
+      <button class="button button-highlight button-highlight--right" onclick="goToDocumentSignaturePage()">
+        assinatura de documentos
+      </button>
+    </div>
+  </div>
+
+
+  <div class="stepper-navigation">
+    <div class="container">
+      <ul class="stepper">
+        <li class="stepper_item stepper_item--active stepper_item--clickable" data-step-key="1" onclick="triggerClickableStepper(event)">
+          <div class="stepper_picture">
+            <div  class="stepper_picture_img--active">
+              <img src="./src/assets/step-active-1.svg" />
+            </div>
+            <div  class="stepper_picture_img--inactive">
+              <img src="./src/assets/step-inactive-1.svg" />
+            </div>
+          </div>
+          <div class="stepper_text">
+            <span>Upload do documento</span>
+            <p>Faça o upload do seu arquivo</p>
+          </div>
+        </li>
+
+        <li class="stepper-divider">
+          <div class="stepper-divider_trace"></div>
+        </li>
+
+        <li class="stepper_item stepper_item--inactive" data-step-key="2" onclick="triggerClickableStepper(event)">
+          <div class="stepper_picture">
+            <div  class="stepper_picture_img--active">
+              <img src="./src/assets/step-active-2.svg" />
+            </div>
+           <div  class="stepper_picture_img--inactive">
+              <img src="./src/assets/step-inactive-2.svg" />
+            </div>
+          </div>
+          <div class="stepper_text">
+            <span>Cadastro do destinatário</span>
+            <p>Insira o contato do destinatário</p>
+          </div>
+        </li>
+
+        <li class="stepper-divider">
+          <div class="stepper-divider_trace"></div>
+        </li>
+
+        <li class="stepper_item stepper_item--inactive" data-step-key="3" onclick="triggerClickableStepper(event)">
+          <div class="stepper_picture">
+            <div  class="stepper_picture_img--active">
+              <img src="./src/assets/step-active-2.svg" />
+            </div>
+           <div  class="stepper_picture_img--inactive">
+              <img src="./src/assets/step-inactive-2.svg" />
+            </div>
+          </div>
+          <div class="stepper_text">
+            <span>Validação com selfie</span>
+            <p>Confirme a identidade com foto</p>
+          </div>
+        </li>
+
+        <li class="stepper-divider">
+          <div class="stepper-divider_trace"></div>
+        </li>
+
+        <li class="stepper_item stepper_item--inactive" data-step-key="4" onclick="triggerClickableStepper(event)">
+          <div class="stepper_picture">
+            <img class="stepper_picture_img--active" src="./src/assets/step-active-4.svg" />
+            <img class="stepper_picture_img--inactive" src="./src/assets/step-inactive-4.svg" />
+          </div>
+          <div class="stepper_text">
+            <span>Assinatura e compartilhamento</span>
+            <p>Assine e compartilhe o documento</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>

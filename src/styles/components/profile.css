@@ -67,3 +67,11 @@
     order: 0;
   }
 }
+
+#app-container {
+  &:not(.logged-in) {
+    .profile {
+      display: none;
+    }
+  }
+}

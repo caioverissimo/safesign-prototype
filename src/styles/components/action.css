@@ -42,3 +42,12 @@
     }
   }
 }
+
+
+#app-container {
+  &.logged-in {
+    .action_group {
+      display: none !important;
+    }
+  }
+}

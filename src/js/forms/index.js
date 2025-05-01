@@ -1,5 +1,14 @@
 import { useSessionStorage } from '../helpers/useSessionStorage.js';
 import { SESSION_KEYS } from '../data/sessionKeys.js';
+import { delayByMs } from '../helpers/delayByMs.js';
+import { autoNavigateOnLoad } from '../main/autoNavigateOnLoad.js'
+
+
+function updateStepProgress(key, value = true) {
+  const stepDataStore = window.stepDataStore;
+  const current = stepDataStore.get();
+  stepDataStore.set({ ...current, [key]: value });
+}
 
 export const bindTokenInputBehaviour = () => {
   console.log('@setupForms | bindTokenInputBehaviour');
@@ -45,7 +54,7 @@ export const bindPhoneMaskBehaviour = () => {
   // });
 };
 
-export function handleSubmit(event, onSuccessCallback) {
+export async function handleSubmit(event, onSuccessCallback) {
   const form = event.target;
   if (!form.checkValidity()) {
     // Let the browser show the default error popups
@@ -63,9 +72,11 @@ export function handleSubmit(event, onSuccessCallback) {
 function handleSignupSubmit(event) {
   handleSubmit(event, () => {
     console.log('Cadastro enviado, salvando register = true');
-    const stepDataStore = window.stepDataStore;
-    const current = stepDataStore.get();
-    stepDataStore.set({ ...current, register: true });
+    // const stepDataStore = window.stepDataStore;
+    // const current = stepDataStore.get();
+    // stepDataStore.set({ ...current, register: true });
+
+    updateStepProgress('register');
 
     paginateModalSignup('forms-token');
   });
@@ -74,16 +85,17 @@ function handleSignupSubmit(event) {
 function handleTokenSubmit(event) {
   handleSubmit(event, () => {
     console.log('Token autorizado, salvando authenticate = true');
-    const stepDataStore = window.stepDataStore;
-    const current = stepDataStore.get();
-    stepDataStore.set({ ...current, authenticate: true });
+    // const stepDataStore = window.stepDataStore;
+    // const current = stepDataStore.get();
+    // stepDataStore.set({ ...current, authenticate: true });
+    updateStepProgress('authenticate');
 
     toggleFloatingComponent('modal-signup');
   });
 }
 
-function handleLoginSubmit(event) {
-  handleSubmit(event, () => {
+async function handleLoginSubmit(event) {
+  handleSubmit(event, async () => {
     const stepDataStore = window.stepDataStore;
     const current = stepDataStore.get();
 
@@ -93,10 +105,15 @@ function handleLoginSubmit(event) {
     }
 
     console.log('Login autorizado, salvando login = true');
-    stepDataStore.set({ ...current, login: true });
+    // stepDataStore.set({ ...current, login: true });
+    updateStepProgress('login');
 
     // Você pode adicionar alguma ação, tipo fechar modal
     toggleFloatingComponent('modal-login', { shouldHaveLoader: false })
+
+    await delayByMs(500);
+
+    await autoNavigateOnLoad();
   });
 }
 

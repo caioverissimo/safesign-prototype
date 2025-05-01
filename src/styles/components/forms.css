@@ -134,3 +134,9 @@
     }
   }
 }
+
+.forms-docdetails {
+  input {
+    background-color: var(--palette-neutral-lighter);
+  }
+}

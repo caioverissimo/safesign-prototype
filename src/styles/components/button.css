@@ -48,3 +48,32 @@
 .button-menu {
   
 }
+
+.progress-navigation-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 5rem;
+  justify-content: space-between;
+}
+
+.button-highlight {
+  width: 330px;
+  height: 3.25rem;
+  color: white;
+  background-color: var(--palette-support-warning-darkest);
+  border-radius: 40px;
+
+  &.button-highlight--left {
+    border-radius: 40px 8px 8px 40px;
+  }
+
+  &.button-highlight--right {
+    border-radius: 8px 40px 40px 8px;
+  }
+
+  &.button-highlight--outline {
+    color: var(--palette-support-warning-darkest);
+    background-color: white;
+    border: 1px solid var(--palette-support-warning-darkest);
+  }
+}

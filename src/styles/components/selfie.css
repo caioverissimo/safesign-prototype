@@ -1,0 +1,43 @@
+.selfie {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.selfie-header {
+  width: 100%;
+  display: flex;
+}
+
+.selfie-content {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.selfie-box {
+  width: calc(50% - 1.5rem);
+  margin-top: 3rem;
+  position: relative;
+
+}
+
+.selfie-box_picture {
+  width: 410px;
+  height: 410px;
+  overflow: hidden;
+  /* border-radius: 48px; */
+  border-radius: 50px;
+}
+
+.selfie-mask {
+  position: absolute;
+  top: 0;
+  height: 0;
+  z-index: 1;
+}
+
+
+.selfie-picture {
+  width: calc(50% - 1.5rem);
+}

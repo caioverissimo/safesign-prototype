@@ -3,6 +3,12 @@ body {
   /* background-color: var(--palette-neutral-lightest); */
   background-color: var(--palette-brand-main-base);
   color: var(--palette-brand-main-darker);
+
+  main {
+    *.hidden {
+      display: none;
+    }
+  }
 }
 
 main {
