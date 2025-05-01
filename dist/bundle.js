@@ -151,14 +151,14 @@
   // src/js/pageLoader/navigation.js
   function navigation() {
     async function navigate(pageEnumKey) {
-      const pagePath = pageSourceMapper[pageEnumKey];
-      if (!pagePath) {
-        console.error(`\u274C No path found for page: ${pageEnumKey}`);
-        return;
-      }
-      await PageLoader.loadPageByEnum(pageEnumKey);
-      window.location.hash = pageEnumKey;
-      window.pageStore.set(pageEnumKey);
+      // const pagePath = pageSourceMapper[pageEnumKey];
+      // if (!pagePath) {
+      //   console.error(`\u274C No path found for page: ${pageEnumKey}`);
+      //   return;
+      // }
+      // await PageLoader.loadPageByEnum(pageEnumKey);
+      // window.location.hash = pageEnumKey;
+      // window.pageStore.set(pageEnumKey);
     }
     function getRoute() {
       const hash = window.location.hash.slice(1);

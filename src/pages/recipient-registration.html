@@ -79,7 +79,7 @@
           </form>
         </div>
 
-        <div class="recipients">
+        <div class="recipients" id="recipients-panel">
           <header class="heading">
             <h4>Destinatários (Assinantes)</h4>
           </header>
@@ -109,7 +109,7 @@
                   </div>
                 </div>
                 <div class="recipients-box_action">
-                  <button type="button">
+                  <button type="button" onclick="showSignaturePanel()">
                     <img src="./src/assets/warning-circle-icon.svg" />
                   </button>
                   <div class="recipients-box_ation_tooltip">
@@ -121,7 +121,7 @@
           </ul>
         </div>
 
-        <div class="recipients">
+        <div class="recipients hidden" id="signature-panel">
           <header class="heading">
             <h4>Cadastrar Assinatura</h4>
           </header>
@@ -141,6 +141,7 @@
                   <button type="button">
                     <img src="./src/assets/warning-circle-icon.svg" />
                   </button>
+
                   <div class="recipients-box_ation_tooltip">
                     <span></span>
                   </div>
@@ -157,18 +158,17 @@
 
           <div class="action_group">              
             <button 
-              class="button button-main--outline" 
-              onclick="toggleFloatingComponent('modal-login')"
-            >
-              Login
-            </button>
-    
-            <button 
               class="button button-main" 
-              onclick="toggleFloatingComponent('modal-signup'); 
-              paginateModalSignup('forms-signup');"
+              onclick="hideSignaturePanel()"
             >
-              Cadastro
+              Salvar
+            </button>
+            
+            <button 
+              class="button button-main--outline" 
+              disabled
+            >
+              Limpar
             </button>
           </div>
         </div>

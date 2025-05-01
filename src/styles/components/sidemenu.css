@@ -12,6 +12,7 @@
   background-color: rgba(54, 124, 136, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  z-index: 6;
 
   .brand--horizontal {
     width: 78px;

@@ -20,6 +20,7 @@ import { createUploadDocsStore } from '../stores/uploadDocsStore.js';
 import { setupGeneralNavigations } from '../global/generalNavigations.js';
 import { setupDocDetails } from '../docdetails/index.js';
 import { setupDocumentSignature } from '../documentsignature/index.js';
+import { setupRecipients } from '../recipients/index.js';
 
 const navigator = navigation();
 
@@ -57,6 +58,7 @@ export const setupMain = async () => {
   setupGeneralNavigations();
   setupDocDetails();
   setupDocumentSignature();
+  setupRecipients();
 
 
   window.addEventListener('hashchange', () => {

@@ -11,20 +11,38 @@
 
 .recipient-registration-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 3rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .recipient-data {
-  width: calc(50% - 1.5rem);
+  width: 100%;
   /* margin-top: 3rem; */
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 1.5%);
+  }
 }
 
 .recipients {
-  width: calc(50% - 1.5rem);
+  width: 100%;
   /* margin-top: 3rem; */
   position: relative;
+
+
+
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 1.5%);
+  }
+
+  .action_group {
+    margin-top: 1.5rem;
+  }
 }
 
 .recipients-list {

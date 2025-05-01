@@ -76,8 +76,14 @@ export async function renderUploadedDocs() {
 
     if (list.childNodes.length) {
       const disabledHightlightButton = document.querySelector('.button-highlight--disabled');
-      disabledHightlightButton.classList.remove('button-highlight--disabled');
-      disabledHightlightButton.removeAttribute('disabled');
+
+      if (disabledHightlightButton) {
+        disabledHightlightButton.classList?.remove('button-highlight--disabled');
+        disabledHightlightButton.removeAttribute('disabled');
+      }
+    } else {
+      const hightlightEnabledButton = document.querySelector('.button-highlight--right');
+      hightlightEnabledButton.classList.add('button-highlight--disabled');
     }
   
     // Add the "+" button at the end

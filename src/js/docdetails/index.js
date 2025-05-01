@@ -1,9 +1,12 @@
 export function getSelectedDocIndex() {
+  console.log('@getSelectedDocIndex');
   const selected = document.querySelector('.uploaddocs_action-item--selected');
   return selected ? Number(selected.getAttribute('data-doc-key')) : -1;
 }
 
 export function showDocDetails(doc) {
+  console.log('@showDocDetails');
+
   const panel = document.getElementById('docdetails-panel');
   // document.getElementById('docdetails-title').textContent = doc.tag || 'Doc';
   document.getElementById('docdetails-title').textContent = 'Detalhe do documento';
@@ -25,7 +28,8 @@ export function hideDocDetails(doc) {
 }
 
 export function handleSaveDoc() {
-  // Get data from inputs
+  console.log('@handleSaveDoc');
+
   const name = document.getElementById('doc_name').value;
   const request = document.getElementById('doc_request_name').value;
 
@@ -42,6 +46,7 @@ export function handleSaveDoc() {
 }
 
 export function handleDeleteDoc() {
+  console.log('@handleDeleteDoc');
   const docs = window.uploadDocsStore.get();
   const selectedIndex = getSelectedDocIndex(); // Implement yourself
   docs.splice(selectedIndex, 1);
