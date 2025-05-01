@@ -15,8 +15,6 @@
     "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.27.1",
     "babel-loader": "^10.0.0",
-    "esbuild": "^0.25.3",
-    "webpack": "^5.99.7",
-    "webpack-cli": "^6.0.1"
+    "esbuild": "^0.25.3"
   }
 }

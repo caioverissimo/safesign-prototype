@@ -30,8 +30,12 @@ export const goToSelfieBiometryPage = async () => {
 };
 
 export const goToDocumentSignaturePage = async () => {
-  console.log('@goToSelfieBiometryPage');
+  console.log('@goToDocumentSignaturePage');
   navigator.navigate(PageEnum.DOCUMENT_SIGNATURE);
+
+  await delayByMs(3000);
+
+  renderUploadedDocs();
 };
 
 export const setupGeneralNavigations = async () => {

@@ -46,8 +46,10 @@
 
 #app-container {
   &.logged-in {
-    .action_group {
-      display: none !important;
+    .propaganda, .header_content {
+      .action_group {
+        display: none !important;
+      }
     }
   }
 }

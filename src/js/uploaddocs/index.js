@@ -73,6 +73,12 @@ export async function renderUploadedDocs() {
     
       list.appendChild(li);
     });
+
+    if (list.childNodes.length) {
+      const disabledHightlightButton = document.querySelector('.button-highlight--disabled');
+      disabledHightlightButton.classList.remove('button-highlight--disabled');
+      disabledHightlightButton.removeAttribute('disabled');
+    }
   
     // Add the "+" button at the end
     const plusLi = document.createElement('li');
@@ -91,7 +97,11 @@ export async function renderUploadedDocs() {
 
   const hash = navigator.getRoute();
 
-  if (hash !== PageEnum.UPLOAD_DOCS) {
+  // if (hash !== PageEnum.UPLOAD_DOCS) {
+  //   console.log('#######ENTROU')
+  //   goToUploadDocsPage();
+  // }
+  if (hash === PageEnum.HOME_LOGGED_IN) {
     console.log('#######ENTROU')
     goToUploadDocsPage();
   }

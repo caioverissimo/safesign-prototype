@@ -10,62 +10,169 @@
     </article> -->
 
     <div class="recipient-registration" id="recipient-registration">
-      <h1>RECIPIENT REGISTRATION</h1>
-      <header>
-        <h4 id="docdetails-title">Detalhe do documento</h4>
-        <span class="uploaddocs_doc-tag">doc 1</span>
-      </header>
+
+      <div class="recipient-registration-header">
+        <header class="heading">
+          <h1>RECIPIENT REGISTRATION</h1>
+          <!-- <h4 id="docdetails-title">Detalhe do documento</h4>
+          <span class="uploaddocs_doc-tag">doc 1</span> -->
+
+          <h3>Cadastro de destinatários</h3>
+        </header>
+      </div>
     
       <!-- <div class="docdetails-thumbnail">
         <img src="./src/assets/doc-thumb-picture-1.png" alt="Document thumbnail" />
         <button type="button" class="button--remove-thumb" onclick="handleDeleteDoc()">✕</button>
       </div> -->
 
-      <form 
-        id="forms-docdetails" 
-        class="forms forms-docdetails" 
-        onsubmit="handleSignupSubmit(event)"
-      >
-      
-        <div>
-          <fieldset class="forms_fieldset">
-            <div class="forms_input">
-              <label for="full_name">nome completo:</label>
-              <input 
-                type="text" 
-                id="full_name" 
-                name="full_name" 
-                minlength="10" 
-                maxlength="100" 
-                size="60" 
-                autocomplete="name" 
-              />
-            </div>
+      <div class="recipient-registration-content">
+        <div class="recipient-data">
+          <header class="heading">
+            <span>Insira os dados do destinatário</span>
+          </header>
+
+          <form 
+            id="forms-docdetails" 
+            class="forms forms-docdetails" 
+            onsubmit="handleSignupSubmit(event)"
+          >
           
-            <div class="forms_input">
-              <label for="email">Email:</label>
-              <input 
-                type="email" 
-                id="email"
-                name="email" 
-                minlength="5" 
-                maxlength="254" 
-                size="35" 
-                autocomplete="email" 
-              />
+            <div>
+              <fieldset class="forms_fieldset">
+                <div class="forms_input">
+                  <label for="full_name">nome completo:</label>
+                  <input 
+                    type="text" 
+                    id="full_name" 
+                    name="full_name" 
+                    minlength="10" 
+                    maxlength="100" 
+                    size="60" 
+                    autocomplete="name" 
+                  />
+                </div>
+              
+                <div class="forms_input">
+                  <label for="email">Email:</label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    name="email" 
+                    minlength="5" 
+                    maxlength="254" 
+                    size="35" 
+                    autocomplete="email" 
+                  />
+                </div>
+              
+                <div class="modal-actions">
+                  <button 
+                    class="button button-main button-main--lg" 
+                    onclick="handleSaveDoc()"
+                  >
+                      definir destinatário
+                  </button>
+                </div>
+              </fieldset>
             </div>
-          
-            <div class="modal-actions">
-              <button 
-                class="button button-main button-main--lg" 
-                onclick="handleSaveDoc()"
-              >
-                  definir destinatário
-              </button>
-            </div>
-          </fieldset>
+          </form>
         </div>
-      </form>
+
+        <div class="recipients">
+          <header class="heading">
+            <h4>Destinatários (Assinantes)</h4>
+          </header>
+        
+          <ul class="recipients-list">
+            <li class="recipients_item recipients_item--complete">
+              <div class="recipients-box">
+                <div class="recipients-box_content">
+                  <span class="recipients_name">Beltrano de Carvalho</span>
+                  
+                  <div class="recipient-tags">
+                    <div class="recipient-tags_item">Assinatura</div>
+                    <div class="recipient-tags_item">Rubrica</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="recipients_item">
+              <div class="recipients-box">
+                <div class="recipients-box_content">
+                  <span class="recipients_name">Fulano de Tal</span>
+
+                  <div class="recipient-tags">
+                    <div class="recipient-tags_item recipient-tags_item--outline">SEM Assinatura</div>
+                    <div class="recipient-tags_item recipient-tags_item--outline">SEM Rubrica</div>
+                  </div>
+                </div>
+                <div class="recipients-box_action">
+                  <button type="button">
+                    <img src="./src/assets/warning-circle-icon.svg" />
+                  </button>
+                  <div class="recipients-box_ation_tooltip">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="recipients">
+          <header class="heading">
+            <h4>Cadastrar Assinatura</h4>
+          </header>
+        
+          <ul class="recipients-list">
+            <li class="recipients_item">
+              <div class="recipients-box">
+                <div class="recipients-box_content">
+                  <span class="recipients_name">Fulano de Tal</span>
+
+                  <div class="recipient-tags">
+                    <div class="recipient-tags_item recipient-tags_item--outline">SEM Assinatura</div>
+                    <div class="recipient-tags_item recipient-tags_item--outline">SEM Rubrica</div>
+                  </div>
+                </div>
+                <div class="recipients-box_action">
+                  <button type="button">
+                    <img src="./src/assets/warning-circle-icon.svg" />
+                  </button>
+                  <div class="recipients-box_ation_tooltip">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <p>Assine na área disponível abaixo:</p>
+
+          <div class="signature-canvas">
+            <img src="./src/assets/signature-draw-fulano-picture.png" alt="">
+          </div>
+
+          <div class="action_group">              
+            <button 
+              class="button button-main--outline" 
+              onclick="toggleFloatingComponent('modal-login')"
+            >
+              Login
+            </button>
+    
+            <button 
+              class="button button-main" 
+              onclick="toggleFloatingComponent('modal-signup'); 
+              paginateModalSignup('forms-signup');"
+            >
+              Cadastro
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     
   </div>

@@ -3,6 +3,7 @@
   --palette-brand-main-darkest: #214765;
   --palette-brand-main-darkest2: #2C5477;
   --palette-brand-main-darker:  #366E88;
+  --palette-brand-main-dark:  #7299AC;
   --palette-brand-main-base:    #367C88;
   --palette-brand-main-base:    rgb(54, 124, 136);
   --palette-brand-main-light:   #366188;
@@ -21,9 +22,12 @@
   --palette-brand-secondary-light:   #2DA853;
   --palette-brand-secondary-lightest:#2DA853;
 
+  /* HIGHLIGHT Greyscale (orange) */
+  --palette-hightlight-greyscale-base: #aa9387;
+
   /* HIGHLIGHT (orange) */
   --palette-highlight-base: #D66D38;
-  --palette-highlight-base: rgb(214, 109, 56);
+  --palette-highlight-base: #d66d38;
   --palette-highlight-light:    #DF4E10;
   --palette-highlight-light:    rgb(223, 78, 16);
 

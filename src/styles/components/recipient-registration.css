@@ -1,0 +1,134 @@
+.recipient-registration {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipient-registration-header {
+  width: 100%;
+  display: flex;
+}
+
+.recipient-registration-content {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.recipient-data {
+  width: calc(50% - 1.5rem);
+  /* margin-top: 3rem; */
+  position: relative;
+}
+
+.recipients {
+  width: calc(50% - 1.5rem);
+  /* margin-top: 3rem; */
+  position: relative;
+}
+
+.recipients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.recipients_item {
+
+  &.recipients_item--complete {
+    .recipients-box {
+      border: 1px solid var(--palette-highlight-base);
+    }
+
+    .recipients_name {
+      color: var(--palette-highlight-base);
+    }
+  }
+}
+
+.recipients-box {
+  max-width: 360px;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid var(--palette-neutral-darkest);
+  border-radius: 4px;
+}
+
+.recipients-box_content {
+
+}
+
+.recipients_name {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  color: var(--palette-neutral-darkest);
+  font-weight: 600;
+}
+
+.recipient-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.recipient-tags_item {
+  padding: 4px 6px;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: var(--palette-brand-main-dark);
+  border: 1px solid var(--palette-brand-main-dark);
+  border-radius: 4px;
+
+  &.recipient-tags_item--outline {
+    color: var(--palette-brand-main-dark);
+    background-color: white;
+  }
+}
+
+.recipients-box_action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    position: relative;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    /* background-color: transparent; */
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    img {
+      width: 36px;
+      height: 36px;
+      /* position: absolute;
+      top: -2px;
+      right: 0;
+      left: 0; */
+    }
+  }
+}
+
+.signature-canvas {
+  height: 215px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid var(--palette-neutral-darkest);
+  border-radius: 8px;
+
+  img {
+    max-height: 120px;
+  }
+}
