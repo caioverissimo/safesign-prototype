@@ -1,4 +1,4 @@
-# SAFE•SIGN – Interface Fintech
+# SAFE•SIGN – Prototype Interface
 
 This is the front-end interface PROTOTYPE for the SafeSign digital document platform. It includes multiple flows such as document upload, recipient registration, selfie validation for biometrics, and document signature (and its sharing).
 
@@ -13,6 +13,7 @@ This is the front-end interface PROTOTYPE for the SafeSign digital document plat
 
 ## 📁 Project Structure
 
+```
 index.html
 ./src
 ├── assets
@@ -156,6 +157,7 @@ index.html
     │   └── index.css
     └── variables
         └── index.css
+```
 
 
 ---
