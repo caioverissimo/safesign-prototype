@@ -60,6 +60,11 @@
     background-color: rgba(78, 156, 179, 0.9);
     background-color: rgba(214, 109, 56, 0.8);
   } */
+
+  span {
+    width: initial;
+    height: initial;
+  }
 }
 
 .modal-content {
@@ -71,7 +76,10 @@
 
   .modal-content_canvas {
     width: 100%;
-    height: 480px;
+    height: 560px;
+    padding: 2rem 3rem;
+    background-color: var(--palette-neutral-lightest);
+    border-radius: 16px;
   }
 
   .pagination {
@@ -79,6 +87,12 @@
       margin: 0;
       padding: 0;
     }
+  }
+}
+
+.modal-docviewer {
+  .modal-content {
+    max-width: 28rem;
   }
 }
 

@@ -25,6 +25,7 @@ const toggleDocSelected = (event, dataDocKey) => {
   showDocDetails(doc); // ✅ pass the right doc
 };
 
+
 export async function renderUploadedDocs() {
   console.log('@renderUploadedDocs')
   const list = document.querySelector('.uploaddocs_actions');
@@ -53,7 +54,11 @@ export async function renderUploadedDocs() {
       const li = document.createElement('li');
       li.className = 'uploaddocs_action-item';
       li.setAttribute('data-doc-key', index);
-      li.setAttribute('onclick', `toggleDocSelected(event, ${index})`);
+      // li.setAttribute('onclick', `toggleDocSelected(event, ${index})`);
+
+      const box = document.createElement('div');
+      box.className = 'uploaddocs_action-box';
+      box.setAttribute('onclick', `toggleDocSelected(event, ${index})`);
     
       const tag = document.createElement('span');
       tag.className = 'uploaddocs_doc-tag';
@@ -101,10 +106,19 @@ export async function renderUploadedDocs() {
       hoverOverlay.appendChild(viewButton);
       hoverOverlay.appendChild(editButton);
     
-      li.appendChild(tag);
-      li.appendChild(button);
-      li.appendChild(hoverOverlay);
-      li.appendChild(closeButton);
+      box.appendChild(tag);
+      box.appendChild(button);
+      box.appendChild(hoverOverlay);
+      box.appendChild(closeButton);
+
+      const statusButton = document.createElement('button');
+      statusButton.className = 'uploaddocs_status-button';
+      statusButton.textContent = doc.signed ? 'Assinado' : 'Assinar';
+      statusButton.classList.add(doc.signed ? 'signed' : 'unsigned');
+      statusButton.onclick = (event) => toggleSignature(event, index);
+
+      li.appendChild(box);
+      li.appendChild(statusButton);
 
       list.appendChild(li);
     });
@@ -125,11 +139,15 @@ export async function renderUploadedDocs() {
     const plusLi = document.createElement('li');
     plusLi.className = 'uploaddocs_action-item';
     plusLi.innerHTML = `
-      <button type="button" class="uploaddocs_action-button" onclick="triggerUpload()">
-        <div class="uploaddocs_action-button--picture">
-          <img src="./src/assets/plus-lg-icon.svg" class="uploadarea_icon" />
-        </div>
-      </button>
+      <div class="uploaddocs_action-box">
+        <button type="button" class="uploaddocs_action-button" onclick="triggerUpload()">
+          
+            <div class="uploaddocs_action-button--picture">
+              <img src="./src/assets/plus-lg-icon.svg" class="uploadarea_icon" />
+            </div>
+          </div>
+        </button>
+      </div>
     `;
     list.appendChild(plusLi);
   }

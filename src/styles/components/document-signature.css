@@ -1,0 +1,39 @@
+.document-signature {
+  &.uploaddocs {
+    .uploaddocs_action-item {
+      &:hover {
+        .uploads_action-hover {
+          display: none;
+        }
+      }
+    }
+
+    .uploaddocs_status-button {
+      display: initial;
+    }
+
+    .close-button {
+      display: none;
+    }
+  }
+
+  .uploaddocs_action-item:last-child {
+    display: none;
+  }
+}
+
+
+
+#signature-panel {
+  .heading {
+    margin-bottom: 2rem;
+  }
+
+  .recipients-box {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+}

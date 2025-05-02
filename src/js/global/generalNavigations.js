@@ -2,6 +2,7 @@ import { navigation } from '../pageLoader/navigation.js';
 import { PageEnum } from '../data/enums.js';
 import { delayByMs } from '../helpers/delayByMs.js';
 import { renderUploadedDocs } from '../uploaddocs/index.js';
+import { renderRecipients } from '../recipients/index.js';
 
 const navigator = navigation();
 
@@ -22,6 +23,10 @@ export const goToUploadDocsPage = async () => {
 export const goToRecipientRegistrationPage = async () => {
   console.log('@goToRecipientRegistrationPage');
   navigator.navigate(PageEnum.RECIPIENT_REGISTRATION);
+
+  await delayByMs(3000);
+
+  renderRecipients();
 };
 
 export const goToSelfieBiometryPage = async () => {

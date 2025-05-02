@@ -46,7 +46,7 @@
 
 #app-container {
   &.logged-in {
-    .propaganda, .header_content {
+    .propaganda, .header_content, .sidemenu {
       .action_group {
         display: none !important;
       }

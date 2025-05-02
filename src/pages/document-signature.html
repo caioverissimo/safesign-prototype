@@ -9,7 +9,7 @@
       </header>
     </article> -->
 
-    <div class="uploaddocs">
+    <div class="uploaddocs document-signature">
 
       <div class="uploaddocs-header">
         <header class="heading">
@@ -22,18 +22,20 @@
         <div class="uploaddocs-documents">
           <p class="uploaddocs_description">Selecione o arquivo que deseja enviar</p>
     
-          <button class="button button-main button-main--lg" onclick="triggerUpload()">Adicionar documento</button>
+          <!-- <button class="button button-main button-main--lg" onclick="triggerUpload()">Adicionar documento</button> -->
     
           <ul class="uploaddocs_actions">
             <li class="uploaddocs_action-item">
-              <button 
-                type="button" 
-                class="uploaddocs_action-button"
-              >
-              <div class="uploaddocs_action-button--picture">
-                <img src="./src/assets/plus-lg-icon.svg" alt="Upload Icon" class="uploadarea_icon" />
+              <div class="uploaddocs_action-box">
+                <button 
+                  type="button" 
+                  class="uploaddocs_action-button"
+                >
+                <div class="uploaddocs_action-button--picture">
+                  <img src="./src/assets/plus-lg-icon.svg" alt="Upload Icon" class="uploadarea_icon" />
+                </div>
+                </button>
               </div>
-              </button>
             </li>
           </ul>
           
@@ -89,9 +91,7 @@
             </div>
           </form>
         </div>
-      </div>
-
-      
+      </div>      
     </div>
 
   </div>
@@ -104,9 +104,8 @@
         validar com selfie
       </button>
       
-      <button class="button button-highlight button-highlight--right" onclick="goToRecipientRegistrationPage()">
-        <!-- cadastrar assinante / destinatário -->
-        cadastrar destinatários
+      <button class="button button-highlight button-highlight--right" onclick="console.log('!!!compartilhar e enviar solicitações de assinatura')"">
+        solicitar assinaturas
       </button>
     </div>
   </div>

@@ -21,6 +21,7 @@ import { setupGeneralNavigations } from '../global/generalNavigations.js';
 import { setupDocDetails } from '../docdetails/index.js';
 import { setupDocumentSignature } from '../documentsignature/index.js';
 import { setupRecipients } from '../recipients/index.js';
+import { createSignaturesStore } from '../stores/signaturesStore.js';
 
 const navigator = navigation();
 
@@ -46,6 +47,9 @@ export const setupMain = async () => {
   const uploadDocsStore = createUploadDocsStore();
   window.uploadDocsStore = uploadDocsStore;
 
+  const signaturesStore = createSignaturesStore();
+  window.signaturesStore = signaturesStore;
+
 
   await delayByMs(1000);
 
@@ -59,6 +63,7 @@ export const setupMain = async () => {
   setupDocDetails();
   setupDocumentSignature();
   setupRecipients();
+  setupDocumentSignature();
 
 
   window.addEventListener('hashchange', () => {

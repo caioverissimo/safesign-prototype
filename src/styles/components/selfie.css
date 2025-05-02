@@ -2,6 +2,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  .modal-actions {
+    align-items: flex-start;
+  }
 }
 
 .selfie-header {
@@ -11,26 +15,42 @@
 
 .selfie-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 3rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .selfie-box {
-  width: calc(50% - 1.5rem);
+  width: 100%;
+  height: auto;
   margin-top: 3rem;
-  position: relative;
+  position: relative;  
 
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 1.5%);
+  }
 }
 
 .selfie-box_picture {
-  width: 410px;
-  height: 410px;
+  width: 100%;
+  height: auto;
+  position: relative;
   overflow: hidden;
   /* border-radius: 48px; */
-  border-radius: 50px;
+  border-radius: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 410px;
+    height: 410px;
+    border-radius: 50px;
+  }
 }
 
 .selfie-mask {
+  width: 100%;
   position: absolute;
   top: 0;
   height: 0;

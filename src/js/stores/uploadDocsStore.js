@@ -16,8 +16,17 @@ export function createUploadDocsStore() {
 
   function add(doc) {
     const current = session.get();
-    const updated = [...current, doc];
+    const updated = [...current, { ...doc, signed: false }];
     session.set(updated);
+  }
+
+  function toggleSignature(index) {
+    const docs = session.get();
+
+    if (docs[index]) {
+      docs[index].signed = !docs[index].signed;
+      session.set([...docs]);
+    }
   }
 
   function clear() {
@@ -28,6 +37,7 @@ export function createUploadDocsStore() {
     get,
     set,
     add,
+    toggleSignature,
     clear,
   };
 }

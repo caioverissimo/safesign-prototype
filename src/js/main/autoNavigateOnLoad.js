@@ -2,7 +2,7 @@ import { navigation } from '../pageLoader/navigation.js';
 import { PageEnum } from '../data/enums.js';
 import { renderUploadedDocs } from '../uploaddocs/index.js';
 import { delayByMs } from '../helpers/delayByMs.js';
-import { goToDocumentSignaturePage, goToUploadDocsPage } from '../global/generalNavigations.js';
+import { goToDocumentSignaturePage, goToRecipientRegistrationPage, goToUploadDocsPage } from '../global/generalNavigations.js';
 
 const navigator = navigation();
 
@@ -73,6 +73,10 @@ export async function autoNavigateOnLoad() {
 
       if (hash === PageEnum.DOCUMENT_SIGNATURE) {
         goToDocumentSignaturePage();
+      }
+
+      if (hash === PageEnum.RECIPIENT_REGISTRATION) {
+        goToRecipientRegistrationPage();
       }
       
       navigator.navigate(hash);
