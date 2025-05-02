@@ -67,10 +67,45 @@ export async function renderUploadedDocs() {
       img.src = './src/assets/doc-thumb-picture-1.png';
     
       button.appendChild(img);
+
+      const hoverOverlay = document.createElement('div');
+      hoverOverlay.className = 'uploads_action-hover';
+
+      const viewButton = document.createElement('button');
+      viewButton.type = 'button';
+      viewButton.onclick = () => toggleFloatingComponent('modal-docviewer', { shouldHaveLoader: false });
+      viewButton.innerHTML = `
+        <picture><img src="./src/assets/magnifier-outline-icon.svg" /></picture>
+        <span>visualizar</span>
+      `;
+
+      const editButton = document.createElement('button');
+      editButton.type = 'button';
+      editButton.onclick = () => toggleDocSelected(null, index);
+      editButton.innerHTML = `
+        <picture><img src="./src/assets/edit-outline-icon.svg" /></picture>
+        <span>editar</span>
+      `;
+
+      const closeButton = document.createElement('div');
+      closeButton.className = 'close-button';
+      closeButton.onclick = () => {
+        docs.splice(index, 1);
+        window.uploadDocsStore.set(docs);
+        renderUploadedDocs(); // re-render after delete
+      };
+      closeButton.innerHTML = `
+        <span><img src="./src/assets/x-icon.svg" /></span>
+      `;
+    
+      hoverOverlay.appendChild(viewButton);
+      hoverOverlay.appendChild(editButton);
     
       li.appendChild(tag);
       li.appendChild(button);
-    
+      li.appendChild(hoverOverlay);
+      li.appendChild(closeButton);
+
       list.appendChild(li);
     });
 

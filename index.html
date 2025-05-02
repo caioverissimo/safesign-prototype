@@ -30,11 +30,46 @@
       <div id="main-loader" class="main-loader"></div>
     </div>
 
+    <div id="modal-docviewer" class="modal-overlay" style="display: none">
+      <div class="modal-wrapper">
+       <div class="modal-box">
+         <div 
+           class="close-button modal_close-button" 
+           onclick="toggleFloatingComponent('modal-docviewer', { shouldHaveLoader: false })"
+         >
+           <span>
+             <img src="./src/assets/x-icon.svg" />
+           </span>
+         </div>
+         <div class="modal-content">
+           <header class="modal-header">
+             <h3>
+               <img src="./src/assets/safesign-logo.svg" /><span>SAFE•SIGN</span>
+             </h3>
+           </header>
+
+           <div class="modal-content_canvas">
+
+           </div>
+
+           <div class="modal-actions">
+            <button type="button" class="button button-main button-main--lg" onclick="toggleFloatingComponent('modal-docviewer', { shouldHaveLoader: false })">
+              <span>
+                ok
+              </span>
+            </button>
+          </div>
+
+         </div>
+       </div>
+      </div>
+   </div>
+
     <div id="modal-login" class="modal-overlay" style="display: none">
        <div class="modal-wrapper">
         <div class="modal-box">
           <div 
-            class="modal_close-button" 
+            class="close-button modal_close-button" 
             onclick="toggleFloatingComponent('modal-login', { shouldHaveLoader: false })"
           >
             <span>
@@ -107,7 +142,7 @@
     <div id="modal-signup" class="modal-overlay" style="display: none">
        <div class="modal-wrapper">
         <div class="modal-box">
-          <div class="modal_close-button" onclick="toggleFloatingComponent('modal-signup', { shouldHaveLoader: false })">
+          <div class="close-button modal_close-button" onclick="toggleFloatingComponent('modal-signup', { shouldHaveLoader: false })">
             <span>
               <img src="./src/assets/x-icon.svg" />
             </span>

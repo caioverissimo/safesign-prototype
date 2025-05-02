@@ -29,10 +29,30 @@
                 type="button" 
                 class="uploaddocs_action-button"
               >
-              <div class="uploaddocs_action-button--picture">
-                <img src="./src/assets/plus-lg-icon.svg" alt="Upload Icon" class="uploadarea_icon" />
-              </div>
+                <div class="uploaddocs_action-button--picture">
+                  <img src="./src/assets/plus-lg-icon.svg" alt="Upload Icon" class="uploadarea_icon" />
+                </div>
               </button>
+              <div class="uploads_action-hover">
+                <button type="button" onclick="">
+                  <picture>
+                    <img src="./src/assets/magnifier-outline-icon.svg" />
+                  </picture>
+                  <span>visualizar</span>
+                </button>
+
+                <button type="button" onclick="toggleDocSelected()">
+                  <picture>
+                    <img src="./src/assets/edit-outline-icon.svg" />
+                  </picture>
+                  <span>editar</span>
+                </button>
+              </div>
+              <div class="close-button" onclick="">
+                <span>
+                  <img src="./src/assets/x-icon.svg" />
+                </span>
+              </div>
             </li>
           </ul>
           
