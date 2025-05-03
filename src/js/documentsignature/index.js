@@ -11,8 +11,22 @@ const saveSignedDocument = async (index) => {
 
   toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false });
 
+  toggleDocPicturePage();
+
   toggleSignature(index);
 }
+
+const toggleDocPicturePage = () => {
+  console.log('@toggleDocPicturePage');
+
+  const docpicture = document.querySelector('#docpicture');
+  const docpictureTag = document.querySelector('#docpicture-tag');
+
+  docpicture.classList.remove('hidden');
+  docpictureTag.classList.add('hidden');
+
+  paginateModalAddSignature('signatures_to_sign');
+};
 
 const addSignTagToDocument = async () => {
   console.log('@addSignTagToDocument');
@@ -24,10 +38,21 @@ const addSignTagToDocument = async () => {
   docpictureTag.classList.remove('hidden');
 };
 
+// const resetSignTagPresentationRules = async () => {
+//   console.log('@resetSignTagPresentationRules');
+
+//   const docpicture = document.querySelector('#docpicture');
+//   const docpictureTag = document.querySelector('#docpicture-tag');
+
+//   docpicture.classList.remove('hidden');
+//   docpictureTag.classList.add('hidden');
+// };
+
 export const setupDocumentSignature = async () => {
   console.log('@setupDocumentSignature');
 
   window.toggleSignature = toggleSignature;
   window.addSignTagToDocument = addSignTagToDocument;
   window.saveSignedDocument = saveSignedDocument;
+  window.toggleDocPicturePage = toggleDocPicturePage;
 };

@@ -3,6 +3,7 @@ import { delayByMs } from "../helpers/delayByMs.js";
 import { navigation } from '../pageLoader/navigation.js';
 import { PageEnum } from '../data/enums.js';
 import { goToUploadDocsPage } from "../global/generalNavigations.js";
+import { updateStepperProgressStore, updateStepperUI } from "../stepper-navigation/index.js";
 
 const navigator = navigation();
 
@@ -23,6 +24,15 @@ const toggleDocSelected = (event, dataDocKey) => {
   const doc = docs[dataDocKey];
   
   showDocDetails(doc); // ✅ pass the right doc
+};
+
+export const addUploadedDoc = (doc) => {
+  console.log('@addUploadedDoc');
+  // const docs = window.uploadDocsStore.get();
+
+  window.uploadDocsStore.add(doc);
+
+  updateStepperUI();
 };
 
 
@@ -133,17 +143,19 @@ export async function renderUploadedDocs() {
       list.appendChild(li);
     });
 
-    if (list.childNodes.length) {
-      const disabledHightlightButton = document.querySelector('.button-highlight--disabled');
+    // updateStepperProgressStore();
+    // if (list.childNodes.length) {
+    //   const disabledHightlightButton = document.querySelector('.button-highlight--disabled');
 
-      if (disabledHightlightButton) {
-        disabledHightlightButton.classList?.remove('button-highlight--disabled');
-        disabledHightlightButton.removeAttribute('disabled');
-      }
-    } else {
-      const hightlightEnabledButton = document.querySelector('.button-highlight--right');
-      hightlightEnabledButton.classList.add('button-highlight--disabled');
-    }
+    //   if (disabledHightlightButton) {
+    //     disabledHightlightButton.classList?.remove('button-highlight--disabled');
+    //     disabledHightlightButton.removeAttribute('disabled');
+    //   }
+    // } else {
+    //   const hightlightEnabledButton = document.querySelector('.button-highlight--right');
+    //   hightlightEnabledButton.classList.add('button-highlight--disabled');
+    // }
+    updateStepperUI();
   
     // Add the "+" button at the end
     const plusLi = document.createElement('li');

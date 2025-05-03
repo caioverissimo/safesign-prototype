@@ -70,7 +70,7 @@
         <div class="modal-box">
           <div 
             class="close-button modal_close-button" 
-            onclick="toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false })"
+            onclick="toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false }); toggleDocPicturePage()"
           >
             <span>
               <img src="./src/assets/x-icon.svg" />
@@ -130,7 +130,7 @@
                 </ul>
     
               <div class="modal-actions">
-                <button type="button" class="button button-main button-main--lg" onclick="toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false })">
+                <button type="button" class="button button-main button-main--lg" onclick="toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false }); toggleDocPicturePage()">
                   <span>ok</span>
                 </button>
               </div>

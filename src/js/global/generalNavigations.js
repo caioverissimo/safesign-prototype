@@ -3,6 +3,7 @@ import { PageEnum } from '../data/enums.js';
 import { delayByMs } from '../helpers/delayByMs.js';
 import { renderUploadedDocs } from '../uploaddocs/index.js';
 import { renderRecipients } from '../recipients/index.js';
+import { updateStepperUI } from '../stepper-navigation/index.js';
 
 const navigator = navigation();
 
@@ -24,7 +25,10 @@ export const goToRecipientRegistrationPage = async () => {
   console.log('@goToRecipientRegistrationPage');
   navigator.navigate(PageEnum.RECIPIENT_REGISTRATION);
 
+  
   await delayByMs(3000);
+  
+  updateStepperUI();
 
   renderRecipients();
 };
@@ -32,6 +36,10 @@ export const goToRecipientRegistrationPage = async () => {
 export const goToSelfieBiometryPage = async () => {
   console.log('@goToSelfieBiometryPage');
   navigator.navigate(PageEnum.SELFIE_BIOMETRY);
+
+  await delayByMs(3000);
+  
+  updateStepperUI();
 };
 
 export const goToDocumentSignaturePage = async () => {

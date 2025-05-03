@@ -20,7 +20,7 @@
           <div class="modal-actions">
             <button 
               class="button button-main button-main--lg" 
-              onclick="handleSaveDoc()"
+              onclick="confirmSelfieValidation()"
             >
                 confirmar reconhecimento
             </button>
@@ -37,14 +37,14 @@
   </div>
 </div>
 
-<aside>
+<aside data-aside-step-key="3">
   <div class="container">
     <div class="progress-navigation-buttons">
       <button class="button button-highlight button-highlight--outline button-highlight--left" onclick="goToRecipientRegistrationPage()">
         cadastrar destinatários
       </button>
 
-      <button class="button button-highlight button-highlight--right" onclick="goToDocumentSignaturePage()">
+      <button class="button button-highlight button-highlight--right button-highlight--disabled" onclick="goToDocumentSignaturePage()">
         assinatura de documentos
       </button>
     </div>

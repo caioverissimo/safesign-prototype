@@ -2,6 +2,7 @@
 //   console.log('@setupUploadArea | triggerUpload');
 
 import { delayByMs } from "../helpers/delayByMs.js";
+import { addUploadedDoc } from "../uploaddocs/index.js";
 
 //   const fileInput = document.getElementById('file-upload');
 //   fileInput.click();
@@ -27,11 +28,11 @@ export function triggerUpload() {
       tag: `doc ${docs.length + 1}`,
     };
     console.log('Arquivo selecionado:', file.name);
-    window.uploadDocsStore.add(doc);
+    // window.uploadDocsStore.add(doc);
+
+    addUploadedDoc(doc);
 
     renderUploadedDocs(); // call render after adding
-
-
     // await delayByMs(500);
     // window.lo
   };

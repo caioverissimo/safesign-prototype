@@ -1,4 +1,4 @@
-
+import { updateStepperUI } from "../stepper-navigation/index.js";
 
 const showSignaturePanel = (index) => {
   // const panel = document.getElementById('signature-panel');
@@ -49,6 +49,9 @@ export const toggleRecipientSignature = async (index) => {
 
   hideSignaturePanel();
   renderRecipients();
+
+
+  updateStepperUI();
 }
 
 
@@ -114,6 +117,8 @@ export const renderRecipients = () => {
 }
 
 export const renderSignaturePanel = (index) => {
+  console.log('@renderSignaturePanel');
+  
   const panel = document.getElementById('signature-panel');
   const signatures = window.signaturesStore.get();
   const recipient = signatures[index];

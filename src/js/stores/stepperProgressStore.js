@@ -79,11 +79,11 @@ export function createStepperProgressStore() {
 // const stepperProgress = createStepperProgressStore();
 
 // // Mark step1 as completed
-// stepperProgress.setStep('step1', true);
+// stepperProgressStore.setStep('step1', true);
 
 // // Read progress (returns { step1: true, step2: false, step3: false, step4: false })
-// const progress = stepperProgress.get();
+// const progress = stepperProgressStore.get();
 // console.log(progress);
 
 // // Reset all progress
-// stepperProgress.reset();
+// stepperProgressStore.reset();

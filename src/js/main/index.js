@@ -22,6 +22,9 @@ import { setupDocDetails } from '../docdetails/index.js';
 import { setupDocumentSignature } from '../documentsignature/index.js';
 import { setupRecipients } from '../recipients/index.js';
 import { createSignaturesStore } from '../stores/signaturesStore.js';
+import { setupStepperNavigation } from '../stepper-navigation/index.js';
+import { createSelfieValidationStore } from '../stores/selfieValidationStore.js';
+import { setupSelfieValidation } from '../selfieValidation/index.js';
 
 const navigator = navigation();
 
@@ -41,12 +44,15 @@ export const setupMain = async () => {
   // Example of setting viewport
   window.viewportStore.set('DESKTOP');
 
-  const stepperProgress = createStepperProgressStore();
-  window.stepperProgress = stepperProgress;
+  const stepperProgressStore = createStepperProgressStore();
+  window.stepperProgressStore = stepperProgressStore;
 
   const uploadDocsStore = createUploadDocsStore();
   window.uploadDocsStore = uploadDocsStore;
 
+  const selfieValidationStore = createSelfieValidationStore();
+  window.selfieValidationStore = selfieValidationStore;
+  
   const signaturesStore = createSignaturesStore();
   window.signaturesStore = signaturesStore;
 
@@ -63,8 +69,8 @@ export const setupMain = async () => {
   setupDocDetails();
   setupDocumentSignature();
   setupRecipients();
-  setupDocumentSignature();
-
+  setupSelfieValidation();
+  setupStepperNavigation();
 
   window.addEventListener('hashchange', () => {
     const hash = navigator.getRoute();

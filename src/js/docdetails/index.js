@@ -10,9 +10,10 @@ export function showDocDetails(doc) {
   const panel = document.getElementById('docdetails-panel');
   // document.getElementById('docdetails-title').textContent = doc.tag || 'Doc';
   document.getElementById('docdetails-title').textContent = 'Detalhe do documento';
-  document.getElementById('doc_name').value = doc.name || '';
-  document.querySelector('.docdetails-panel .uploaddocs_doc-tag').textContent = doc.tag || 'doc';
-  document.getElementById('doc_request_name').value = doc.request || '';
+
+  document.getElementById('doc_name').value = doc?.name || '';
+  document.querySelector('.docdetails-panel .uploaddocs_doc-tag').textContent = doc?.tag || 'doc';
+  document.getElementById('doc_request_name').value = doc?.request || '';
   panel.classList.remove('hidden');
 
   const uploadarea = document.querySelector('.uploadarea');

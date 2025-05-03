@@ -165,14 +165,14 @@
   </div>
 </div>
 
-<aside>
+<aside data-aside-step-key="2">
   <div class="container">
     <div class="progress-navigation-buttons">
       <button class="button button-highlight button-highlight--outline button-highlight--left" onclick="goToUploadDocsPage()">
         adicionar documentos
       </button>
 
-      <button class="button button-highlight button-highlight--right" onclick="goToSelfieBiometryPage()">
+      <button class="button button-highlight button-highlight--right button-highlight--disabled" onclick="goToSelfieBiometryPage()">
         validar com selfie
       </button>
     </div>
@@ -182,7 +182,7 @@
   <div class="stepper-navigation">
     <div class="container">
       <ul class="stepper">
-        <li class="stepper_item stepper_item--active stepper_item--clickable" data-step-key="1" onclick="triggerClickableStepper(event)">
+        <li class="stepper_item stepper_item--inactive stepper_item--clickable" data-step-key="1" onclick="triggerClickableStepper(event)">
           <div class="stepper_picture">
             <div  class="stepper_picture_img--active">
               <img src="./src/assets/step-active-1.svg" />
@@ -201,7 +201,7 @@
           <div class="stepper-divider_trace"></div>
         </li>
 
-        <li class="stepper_item stepper_item--inactive" data-step-key="2" onclick="triggerClickableStepper(event)">
+        <li class="stepper_item stepper_item--inactive stepper_item--clickable" data-step-key="2" onclick="triggerClickableStepper(event)">
           <div class="stepper_picture">
             <div  class="stepper_picture_img--active">
               <img src="./src/assets/step-active-2.svg" />

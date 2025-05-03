@@ -3,7 +3,7 @@
 // const stepperProgress = createStepperProgressStore();
 
 // export function updateStepperClickableClasses() {
-//   const progress = stepperProgress.get();
+//   const progress = stepperProgressStore.get();
 
 //   const steps = [
 //     { stepKey: 'step1', element: document.querySelector('[data-step="1"]') },

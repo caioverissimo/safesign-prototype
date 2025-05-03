@@ -2,7 +2,7 @@ import { navigation } from '../pageLoader/navigation.js';
 import { PageEnum } from '../data/enums.js';
 import { renderUploadedDocs } from '../uploaddocs/index.js';
 import { delayByMs } from '../helpers/delayByMs.js';
-import { goToDocumentSignaturePage, goToRecipientRegistrationPage, goToUploadDocsPage } from '../global/generalNavigations.js';
+import { goToDocumentSignaturePage, goToRecipientRegistrationPage, goToSelfieBiometryPage, goToUploadDocsPage } from '../global/generalNavigations.js';
 
 const navigator = navigation();
 
@@ -77,6 +77,10 @@ export async function autoNavigateOnLoad() {
 
       if (hash === PageEnum.RECIPIENT_REGISTRATION) {
         goToRecipientRegistrationPage();
+      }
+
+      if (hash === PageEnum.SELFIE_BIOMETRY) {
+        goToSelfieBiometryPage();
       }
       
       navigator.navigate(hash);
