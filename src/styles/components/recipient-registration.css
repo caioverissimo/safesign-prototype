@@ -64,6 +64,13 @@
       color: var(--palette-highlight-base);
     }
   }
+
+  &.recipients_item--disabled {
+    opacity: 0.4;
+    .recipients-box {
+      background-color: var(--palette-neutral-lighter);
+    }
+  }
 }
 
 .recipients-box {

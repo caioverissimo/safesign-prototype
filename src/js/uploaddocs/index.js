@@ -113,9 +113,19 @@ export async function renderUploadedDocs() {
 
       const statusButton = document.createElement('button');
       statusButton.className = 'uploaddocs_status-button';
-      statusButton.textContent = doc.signed ? 'Assinado' : 'Assinar';
-      statusButton.classList.add(doc.signed ? 'signed' : 'unsigned');
-      statusButton.onclick = (event) => toggleSignature(event, index);
+
+      if (doc?.signed) {
+        statusButton.textContent = doc.signed ? 'Assinado' : 'Assinar';
+        statusButton.classList.add(doc.signed ? 'signed' : 'unsigned');
+      } else {
+        statusButton.textContent = doc.signed ? 'Assinado' : 'Assinar';
+        statusButton.classList.add(doc.signed ? 'signed' : 'unsigned');
+        // statusButton.onclick = (event) => toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false });
+        statusButton.onclick = (event) => {
+          window.selectedDocIndex = index; // 👈 salva o index globalmente
+          toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false });
+        };
+      }
 
       li.appendChild(box);
       li.appendChild(statusButton);

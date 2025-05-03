@@ -27,6 +27,35 @@ export const paginateModalSignup = async (pageId) => {
   }
 };
 
+export const paginateModalAddSignature = async (pageId) => {
+  console.log('@setupModals | paginateModalAddSignature');
+
+  if (!pageId) {
+    throw Error("The 'page id' is missing!")
+  }
+
+//   signatures_to_sign
+// doc_to_sign
+
+  const paginationItem =  $(`#pagination-item_${pageId}`)
+  const page = $(`#${pageId}`);
+  const pageDisplay = page.css('display');
+  // const modalContent = $(`.modal-content`);
+  const modalContent = $(`#modal-add-signature`).find('.modal-content');
+
+  paginationItem.parent().children().removeClass('pagination_item--active');
+  paginationItem.addClass('pagination_item--active');
+
+  page.parent().children().css('display', 'none');
+  page.css('display', 'block');
+
+  modalContent.removeClass('modal-content--token');
+
+  if (pageId === 'forms-token') {
+    modalContent.addClass('modal-content--token');
+  }
+};
+
 export const toggleFloatingComponent = async (componentId, options) => {
   console.log('@setupModals | toggleFloatingComponent');
   
@@ -79,4 +108,5 @@ export const setupModals = () => {
 
   window.toggleFloatingComponent = toggleFloatingComponent;
   window.paginateModalSignup = paginateModalSignup;
+  window.paginateModalAddSignature = paginateModalAddSignature;
 };

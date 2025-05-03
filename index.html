@@ -32,27 +32,27 @@
 
     <div id="modal-docviewer" class="modal-overlay modal-docviewer" style="display: none">
       <div class="modal-wrapper">
-       <div class="modal-box">
-         <div 
-           class="close-button modal_close-button" 
-           onclick="toggleFloatingComponent('modal-docviewer', { shouldHaveLoader: false })"
-         >
-           <span>
-             <img src="./src/assets/x-icon.svg" />
-           </span>
-         </div>
-         <div class="modal-content">
-           <header class="modal-header">
-             <h3>
-               <img src="./src/assets/safesign-logo.svg" /><span>SAFE•SIGN</span>
-             </h3>
-           </header>
+        <div class="modal-box">
+          <div 
+            class="close-button modal_close-button" 
+            onclick="toggleFloatingComponent('modal-docviewer', { shouldHaveLoader: false })"
+          >
+            <span>
+              <img src="./src/assets/x-icon.svg" />
+            </span>
+          </div>
+          <div class="modal-content">
+            <header class="modal-header">
+              <h3>
+                <img src="./src/assets/safesign-logo.svg" /><span>SAFE•SIGN</span>
+              </h3>
+            </header>
 
-           <div class="modal-content_canvas">
+            <div class="modal-content_canvas">
             <img src="./src/assets/doc-picture-1.png" />
-           </div>
+            </div>
 
-           <div class="modal-actions">
+            <div class="modal-actions">
             <button type="button" class="button button-main button-main--lg" onclick="toggleFloatingComponent('modal-docviewer', { shouldHaveLoader: false })">
               <span>
                 ok
@@ -60,13 +60,137 @@
             </button>
           </div>
 
-         </div>
-       </div>
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
 
+    <div id="modal-add-signature" class="modal-overlay modal-add-signature" style="display: none">
+      <div class="modal-wrapper">
+        <div class="modal-box">
+          <div 
+            class="close-button modal_close-button" 
+            onclick="toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false })"
+          >
+            <span>
+              <img src="./src/assets/x-icon.svg" />
+            </span>
+          </div>
+    
+          <div class="modal-content">
+            <div id="signatures_to_sign" class="modal-content_page">
+              <header class="modal-header">
+                <h3>
+                  <img src="./src/assets/safesign-logo.svg" /><span>SAFE•SIGN</span>
+                </h3>
+              </header>
+    
+              <p>Selecione a assinatura: </p>
+    
+              <ul class="recipients-list">
+                <li class="recipients_item recipients_item--complete" onclick="paginateModalAddSignature('doc_to_sign')">
+                  <div class="recipients-box">
+                    <div class="recipients-box_content">
+                      <span class="recipients_name">Caio Veríssimo Barbosa</span>
+                      <div class="recipient-tags">
+                        <div class="recipient-tags_item">Assinatura</div>
+                        <div class="recipient-tags_item">Rubrica</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="recipients_item recipients_item--complete recipients_item--disabled">
+                  <div class="recipients-box">
+                    <div class="recipients-box_content">
+                      <span class="recipients_name">Beltrano de Carvalho</span>
+                      <div class="recipient-tags">
+                        <div class="recipient-tags_item">Assinatura</div>
+                        <div class="recipient-tags_item">Rubrica</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="recipients_item recipients_item--disabled">
+                  <div class="recipients-box">
+                    <div class="recipients-box_content">
+                      <span class="recipients_name">Fulano de Tal</span>
+                      <div class="recipient-tags">
+                        <div class="recipient-tags_item recipient-tags_item--outline">SEM Assinatura</div>
+                        <div class="recipient-tags_item recipient-tags_item--outline">SEM Rubrica</div>
+                      </div>
+                    </div>
+                    <div class="recipients-box_action">
+                      <button type="button">
+                        <img src="./src/assets/warning-circle-icon.svg"></button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+    
+              <div class="modal-actions">
+                <button type="button" class="button button-main button-main--lg" onclick="toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false })">
+                  <span>ok</span>
+                </button>
+              </div>
+            </div>
+    
+            <div id="doc_to_sign" class="modal-content_page" style="display: none">
+              <header class="modal-header">
+                <h3>
+                  <img src="./src/assets/safesign-logo.svg" />
+                  <span>SAFE•SIGN</span>
+                </h3>
+              </header>
+    
+              <p>Selecione o local do documento que deseja assinar: </p>
+    
+              <div id="docpicture" class="modal-content_docpicture">
+                <img src="./src/assets/doc-picture-1.png" onclick="addSignTagToDocument()" />
+              </div>
+
+              <div id="docpicture-tag" class="modal-content_docpicture hidden">
+                <img src="./src/assets/doc-tag-picture-1.png" />
+
+                <div class="modal-actions">
+                  <button type="submit" class="button button-main button-main--lg" onclick="saveSignedDocument(window.selectedDocIndex)">
+                    salvar documento assinado
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="pagination">
+              <div class="pagination_content">
+                <ul>
+                  <li 
+                    id="pagination-item_signatures_to_sign" 
+                    class="pagination_item pagination_item--active"
+                  >
+                    <button onclick="paginateModalAddSignature('signatures_to_sign')">
+                      <span></span>
+                    </button>
+                  </li>
+                  <li 
+                    id="pagination-item_doc_to_sign" 
+                    class="pagination_item"
+                  >
+                    <button onclick="paginateModalAddSignature('doc_to_sign')">
+                      <span></span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
     <div id="modal-login" class="modal-overlay" style="display: none">
-       <div class="modal-wrapper">
+        <div class="modal-wrapper">
         <div class="modal-box">
           <div 
             class="close-button modal_close-button" 
@@ -136,11 +260,11 @@
             </form>
           </div>
         </div>
-       </div>
+        </div>
     </div>
 
     <div id="modal-signup" class="modal-overlay" style="display: none">
-       <div class="modal-wrapper">
+      <div class="modal-wrapper">
         <div class="modal-box">
           <div class="close-button modal_close-button" onclick="toggleFloatingComponent('modal-signup', { shouldHaveLoader: false })">
             <span>
@@ -161,105 +285,106 @@
               onsubmit="handleSubmit(event, () => paginateModalSignup('forms-token'))"
             > -->
             <div>
-            <form 
-              id="forms-signup" 
-              class="forms forms-signup" 
-              onsubmit="handleSignupSubmit(event)"
-            >
-              <div>
-                <fieldset class="forms_fieldset">
-                  
-                  <div class="forms_input">
-                    <label for="full_name">Nome completo:</label>
-                    <input 
-                      type="text" 
-                      id="full_name" 
-                      name="full_name" 
-                      minlength="10" 
-                      maxlength="100" 
-                      size="60" 
-                      autocomplete="name" 
-                    />
-                  </div>
-            
-                  <div class="forms_input">
-                    <label for="email">Email:</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      name="email" 
-                      minlength="5" 
-                      maxlength="254" 
-                      size="35" 
-                      autocomplete="email" 
-                    />
-                  </div>
-            
-                  <div class="forms_input">
-                    <label for="phone">Celular:</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
-                      name="phone" 
-                      pattern="\([0-9]{2}\)\s[2-9][0-9]{3,4}-[0-9]{4}"
-                      minlength="14"
-                      maxlength="14"
-                      autocomplete="tel-national" 
-                      placeholder="(11) 98765-4321"
-                    />
-                  </div>
-            
-                  <div class="forms_input">
-                    <label for="birth_date">Data de nascimento:</label>
-                    <input 
-                      type="date" 
-                      id="birth_date"
-                      name="birth_date" 
-                      min="1900-01-01" 
-                      max="2025-12-31" 
-                      autocomplete="bday" 
-                    />
-                  </div>
-            
-                  <div class="forms_input">
-                    <label for="password">Senha:</label>
-                    <input 
-                      type="password" 
-                      id="password" 
-                      name="password" 
-                      minlength="6" 
-                      maxlength="30" 
-                      autocomplete="new-password"
-                    />
-                    <button type="button" class="button--toggle-password">
-                      <img src="./src/assets/eye-icon.svg" />
-                    </button>
-                  </div>
-            
-                  <div class="forms_input">
-                    <label for="confirm_password">Confirmar senha:</label>
-                    <input 
-                      type="password" 
-                      id="confirm_password"
-                      name="confirm_password" 
-                      minlength="6" 
-                      maxlength="30" 
-                      autocomplete="new-password"
-                    />
-                    <button type="button" class="button--toggle-password">
-                      <img src="./src/assets/eye-icon.svg" />
-                    </button>
-                  </div>
-            
-                </fieldset>
-              </div>
-            
-              <div class="modal-actions">
-                <button type="submit" class="button button-main button-main--lg">
-                  Cadastrar
-                </button>
-              </div>
-            </form>
+
+              <form 
+                id="forms-signup" 
+                class="forms forms-signup" 
+                onsubmit="handleSignupSubmit(event)"
+              >
+                <div>
+                  <fieldset class="forms_fieldset">
+                    
+                    <div class="forms_input">
+                      <label for="full_name">Nome completo:</label>
+                      <input 
+                        type="text" 
+                        id="full_name" 
+                        name="full_name" 
+                        minlength="10" 
+                        maxlength="100" 
+                        size="60" 
+                        autocomplete="name" 
+                      />
+                    </div>
+              
+                    <div class="forms_input">
+                      <label for="email">Email:</label>
+                      <input 
+                        type="email" 
+                        id="email"
+                        name="email" 
+                        minlength="5" 
+                        maxlength="254" 
+                        size="35" 
+                        autocomplete="email" 
+                      />
+                    </div>
+              
+                    <div class="forms_input">
+                      <label for="phone">Celular:</label>
+                      <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        pattern="\([0-9]{2}\)\s[2-9][0-9]{3,4}-[0-9]{4}"
+                        minlength="14"
+                        maxlength="14"
+                        autocomplete="tel-national" 
+                        placeholder="(11) 98765-4321"
+                      />
+                    </div>
+              
+                    <div class="forms_input">
+                      <label for="birth_date">Data de nascimento:</label>
+                      <input 
+                        type="date" 
+                        id="birth_date"
+                        name="birth_date" 
+                        min="1900-01-01" 
+                        max="2025-12-31" 
+                        autocomplete="bday" 
+                      />
+                    </div>
+              
+                    <div class="forms_input">
+                      <label for="password">Senha:</label>
+                      <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        minlength="6" 
+                        maxlength="30" 
+                        autocomplete="new-password"
+                      />
+                      <button type="button" class="button--toggle-password">
+                        <img src="./src/assets/eye-icon.svg" />
+                      </button>
+                    </div>
+              
+                    <div class="forms_input">
+                      <label for="confirm_password">Confirmar senha:</label>
+                      <input 
+                        type="password" 
+                        id="confirm_password"
+                        name="confirm_password" 
+                        minlength="6" 
+                        maxlength="30" 
+                        autocomplete="new-password"
+                      />
+                      <button type="button" class="button--toggle-password">
+                        <img src="./src/assets/eye-icon.svg" />
+                      </button>
+                    </div>
+              
+                  </fieldset>
+                </div>
+              
+                <div class="modal-actions">
+                  <button type="submit" class="button button-main button-main--lg">
+                    Cadastrar
+                  </button>
+                </div>
+              </form>
 
               <!-- <form id="forms-token" class="forms forms-token"  
                 onsubmit="handleSubmit(event, () => toggleFloatingComponent('modal-signup'))"
@@ -321,9 +446,9 @@
             </div>
           </div>
         </div>
-       </div>
+      </div>
     </div>
-    
+
     <div id="app-container" page="home-logged-out" class="logged-out">
       <!-- ATENCAO: este bloco de código está aqui para que o index.html possa atender ao requisito: -->
       <!-- "(...) garanta que o projeto abra na máquina do professor através do arquivo .HTML. Projetos que não abrirem serão desconsiderados." -->
@@ -400,7 +525,7 @@
             >
               Login
             </button>
-  
+
             <button 
               class="button button-main" 
               onclick="toggleFloatingComponent('modal-signup'); 
@@ -718,7 +843,7 @@
       </footer>
       <!-- endof  ATENCAO:-->
     </div>
-  </div>
+    </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

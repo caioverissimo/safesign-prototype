@@ -47,13 +47,15 @@ export const toggleRecipientSignature = async (index) => {
   console.log('@toggleSignature');
   window.signaturesStore.toggleSignature(index);
 
-  renderRecipients();
   hideSignaturePanel();
+  renderRecipients();
 }
 
 
 export const renderRecipients = () => {
-  const list = document.querySelector('.recipients-list');
+  console.log('@renderRecipients');
+  
+  const list = document.querySelector('#recipients-panel .recipients-list');
   const signatures = window.signaturesStore.get();
 
   if (list) {

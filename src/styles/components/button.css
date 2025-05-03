@@ -20,6 +20,12 @@
     color: var(--palette-neutral-lightest);
     background-color: var(--palette-brand-main-darkest);
 
+    &:disabled {
+      opacity: 0.4;
+      background-color: var(--palette-neutral-base);
+      cursor: not-allowed;
+    }
+
     &.button-main--lg {
       height: 3.25rem;
     }
@@ -30,6 +36,12 @@
     color: var(--palette-brand-main-darkest);
     border: 1px solid var(--palette-brand-main-darkest);
     background-color: transparent;
+
+    &:disabled {
+      opacity: 0.4;
+      background-color: var(--palette-neutral-base);
+      cursor: not-allowed;
+    }
   }
 
   img {

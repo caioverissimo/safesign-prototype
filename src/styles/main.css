@@ -4,7 +4,7 @@ body {
   background-color: var(--palette-brand-main-base);
   color: var(--palette-brand-main-darker);
 
-  main {
+  > div {
     *.hidden {
       display: none;
     }
