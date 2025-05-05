@@ -18,7 +18,7 @@
 
   &.button-main {
     color: var(--palette-neutral-lightest);
-    background-color: var(--palette-brand-main-darkest);
+    background-color: var(--palette-brand-main-ultradarkest);
 
     &:disabled {
       opacity: 0.4;
@@ -33,8 +33,8 @@
 
   
   &.button-main--outline {
-    color: var(--palette-brand-main-darkest);
-    border: 1px solid var(--palette-brand-main-darkest);
+    color: var(--palette-brand-main-ultradarkest);
+    border: 1px solid var(--palette-brand-main-ultradarkest);
     background-color: transparent;
 
     &:disabled {

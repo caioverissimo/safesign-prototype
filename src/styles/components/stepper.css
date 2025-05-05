@@ -162,7 +162,7 @@
       }
 
       .stepper_text {
-        color: var(--palette-brand-main-darkest);
+        color: var(--palette-brand-main-ultradarkest);
       }
 
       & .stepper_picture_img--active {

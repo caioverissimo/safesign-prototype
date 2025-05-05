@@ -60,7 +60,7 @@
   background-color: var(--palette-neutral-lighter); */
 
   /* &.uploaddocs_action-item--selected {
-    background-color: var(--palette-brand-main-lightest);
+    background-color: var(--palette-brand-main-ultralight);
   } */
 
   &:hover {
@@ -83,7 +83,7 @@
 }
 
 .uploaddocs_action-item--selected .uploaddocs_action-box {
-  background-color: var(--palette-brand-main-lightest);
+  background-color: var(--palette-brand-main-ultralight);
 }
 
 .uploaddocs_status-button {
@@ -95,7 +95,7 @@
   font-size: 0.825rem;
   font-weight: 600;
   background-color: white;
-  border: 1px solid var(--palette-brand-main-light);
+  border: 1px solid var(--palette-brand-main-darkest);
   border-radius: 6px;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
@@ -106,8 +106,8 @@
 }
 
 .uploaddocs_status-button.signed {
-  color: var(--palette-brand-main-darkest);
-  border-color: var(--palette-brand-main-darkest);
+  color: var(--palette-brand-main-ultradarkest);
+  border-color: var(--palette-brand-main-ultradarkest);
 }
 
 .uploaddocs_status-button.unsigned {
@@ -126,7 +126,7 @@
   height: 22px;
   line-height: 22px;
   background-color: var(--palette-neutral-lightest); /* Or #F6F7F9 if not defined */
-  border: 1px solid var(--palette-brand-main-lightest);
+  border: 1px solid var(--palette-brand-main-ultralight);
   color: var(--palette-brand-main-base);
   font-weight: 600;
   font-size: 0.675rem;

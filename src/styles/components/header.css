@@ -39,7 +39,7 @@
         color: var(--palette-neutral-ultradarkest);
     
         span {
-          color: var(--palette-brand-main-lighter);
+          color: var(--palette-brand-main-darker);
         }
       }
     }

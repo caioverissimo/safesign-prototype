@@ -15,7 +15,7 @@
   border-radius: 50%;
   /* border: 17px solid var(--palette-neutral-lightest);; */
   /* background-color: white; */
-  box-shadow: 1px 1px 10px 1px var(--palette-brand-main-lighter);
+  box-shadow: 1px 1px 10px 1px var(--palette-brand-main-darker);
 }
 
 .main-loader:after {
@@ -27,7 +27,7 @@
   aspect-ratio: 1;
   border-radius: 50%;
   /* border: 8px solid lightblue; */
-  border: 16px solid var(--palette-brand-main-darkest);
+  border: 16px solid var(--palette-brand-main-ultradarkest);
   /* border-right-color: orange; */
   border-right-color: var(--palette-highlight-base);
   animation: l2 1s infinite linear;

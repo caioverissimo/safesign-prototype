@@ -41,7 +41,7 @@
     opacity: 1;
 
     button {
-      background-color: var(--palette-brand-main-light);
+      background-color: var(--palette-brand-main-darkest);
     }
   }
 }

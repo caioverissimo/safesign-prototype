@@ -1,12 +1,12 @@
 .footer {
   min-height: 225px;
   font-family: 'Montserrat';
-  color: var(--palette-brand-main-darkest);
+  color: var(--palette-brand-main-ultradarkest);
   padding: 2rem 0;
   background-color: var(--palette-brand-main-base);
 
   * {
-    color: var(--palette-brand-main-darkest);
+    color: var(--palette-brand-main-ultradarkest);
   }
 
   ul, & ul, & li {
@@ -67,7 +67,7 @@
   }
 
   span {
-    color: var(--palette-brand-main-darkest);
+    color: var(--palette-brand-main-ultradarkest);
     font-weight: 700;
   }
 

@@ -127,12 +127,12 @@
   color: white;
   font-weight: 400;
   font-size: 14px;
-  background-color: var(--palette-brand-main-dark);
-  border: 1px solid var(--palette-brand-main-dark);
+  background-color: var(--palette-brand-main-lightest);
+  border: 1px solid var(--palette-brand-main-lightest);
   border-radius: 4px;
 
   &.recipient-tags_item--outline {
-    color: var(--palette-brand-main-dark);
+    color: var(--palette-brand-main-lightest);
     background-color: white;
   }
 }

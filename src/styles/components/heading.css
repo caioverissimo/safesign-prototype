@@ -9,7 +9,7 @@
   }
   
   h2 {
-    color: var(--palette-brand-main-darker);
+    color: var(--palette-brand-main-dark);
     font-size: 1.5rem;
 
     @media screen and (min-width: 431px) {
@@ -27,7 +27,7 @@
 
   h3 {
     font-size: 1.5rem;
-    color: var(--palette-brand-main-darkest2);
+    color: var(--palette-brand-main-ultradark);
 
     @media screen and (min-width: 768px) {
       font-size: 2.25rem;

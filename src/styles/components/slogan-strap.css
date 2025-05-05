@@ -6,7 +6,7 @@
   color: var(--palette-neutral-lightest);
   font-weight: 200;
   font-style: italic;
-  background-color: var(--palette-brand-main-lightest);
+  background-color: var(--palette-brand-main-ultralight);
 }
 
 .slogan-strap__text {

@@ -7,7 +7,7 @@
     padding: 0.25rem;
     font-weight: 400;
     font-style: italic;
-    color: var(--palette-brand-main-darker);
+    color: var(--palette-brand-main-dark);
     border: none;
     border-radius: 4px;
     background-color: var(--palette-neutral-lightest);
@@ -115,7 +115,7 @@
       border: 1px solid var(--palette-neutral-lightest);
       border-radius: 6px;
       background-color: var(--palette-neutral-lightest);
-      color: var(--palette-brand-main-darker);
+      color: var(--palette-brand-main-dark);
       font-weight: 600;
       outline: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
