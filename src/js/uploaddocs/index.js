@@ -4,10 +4,11 @@ import { navigation } from '../pageLoader/navigation.js';
 import { PageEnum } from '../data/enums.js';
 import { goToUploadDocsPage } from "../global/generalNavigations.js";
 import { updateStepperProgressStore, updateStepperUI } from "../stepper-navigation/index.js";
+import { hideDocDetails } from "../docdetails/index.js";
 
 const navigator = navigation();
 
-const toggleDocSelected = (event, dataDocKey) => {
+const toggleDocSelected = (dataDocKey) => {
   console.log('@toggleDocSelected');
 
   document.querySelectorAll('.uploaddocs_action-item').forEach((item) => {
@@ -36,8 +37,9 @@ export const addUploadedDoc = (doc) => {
 };
 
 
-export async function renderUploadedDocs() {
-  console.log('@renderUploadedDocs')
+export const renderUploadedDocs = async () => {
+  console.log('@renderUploadedDocs');
+
   const list = document.querySelector('.uploaddocs_actions');
   const docs = window.uploadDocsStore.get();
 
@@ -47,11 +49,11 @@ export async function renderUploadedDocs() {
     list.innerHTML = '';
 
     // Re-render each doc
-    docs.forEach((doc, index) => {
+    docs.forEach(async (doc, index) => {
       // const li = document.createElement('li');
       // li.className = 'uploaddocs_action-item';
       // li.setAttribute('data-doc-key', index);
-      // li.setAttribute('onclick', `toggleDocSelected(event, ${index})`);
+      // li.setAttribute('onclick', `toggleDocSelected(${index})`);
   
       // li.innerHTML = `
       //   <button type="button" class="uploaddocs_action-button">
@@ -64,11 +66,11 @@ export async function renderUploadedDocs() {
       const li = document.createElement('li');
       li.className = 'uploaddocs_action-item';
       li.setAttribute('data-doc-key', index);
-      // li.setAttribute('onclick', `toggleDocSelected(event, ${index})`);
+      // li.setAttribute('onclick', `toggleDocSelected(${index})`);
 
       const box = document.createElement('div');
       box.className = 'uploaddocs_action-box';
-      box.setAttribute('onclick', `toggleDocSelected(event, ${index})`);
+      box.setAttribute('onclick', `toggleDocSelected(${index})`);
     
       const tag = document.createElement('span');
       tag.className = 'uploaddocs_doc-tag';
@@ -96,7 +98,7 @@ export async function renderUploadedDocs() {
 
       const editButton = document.createElement('button');
       editButton.type = 'button';
-      editButton.onclick = () => toggleDocSelected(null, index);
+      editButton.onclick = () => toggleDocSelected(index);
       editButton.innerHTML = `
         <picture><img src="./src/assets/edit-outline-icon.svg" /></picture>
         <span>editar</span>
@@ -104,10 +106,16 @@ export async function renderUploadedDocs() {
 
       const closeButton = document.createElement('div');
       closeButton.className = 'close-button';
-      closeButton.onclick = () => {
+      closeButton.onclick = async () => {
         docs.splice(index, 1);
         window.uploadDocsStore.set(docs);
         renderUploadedDocs(); // re-render after delete
+
+        // TODO: remove this temporary hide approach after refactor.
+        // This seems to be necessary because of the onclick, on "item" div
+        // that triggers showDetails function.
+        await delayByMs(25);
+        hideDocDetails();
       };
       closeButton.innerHTML = `
         <span><img src="./src/assets/x-icon.svg" /></span>

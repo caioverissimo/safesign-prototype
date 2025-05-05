@@ -1,3 +1,5 @@
+import { delayByMs } from "../helpers/delayByMs.js";
+
 export function getSelectedDocIndex() {
   console.log('@getSelectedDocIndex');
   const selected = document.querySelector('.uploaddocs_action-item--selected');
@@ -20,7 +22,9 @@ export function showDocDetails(doc) {
   uploadarea.classList.add('hidden');
 }
 
-export function hideDocDetails(doc) {
+export function hideDocDetails() {
+  console.log('@hideDocDetails');
+
   const panel = document.getElementById('docdetails-panel');
   panel.classList.add('hidden');
 
@@ -46,7 +50,7 @@ export function handleSaveDoc() {
   hideDocDetails();
 }
 
-export function handleDeleteDoc() {
+export const handleDeleteDoc = async () => {
   console.log('@handleDeleteDoc');
   const docs = window.uploadDocsStore.get();
   const selectedIndex = getSelectedDocIndex(); // Implement yourself
@@ -54,12 +58,10 @@ export function handleDeleteDoc() {
   window.uploadDocsStore.set(docs);
   renderUploadedDocs();
   document.getElementById('docdetails-panel').classList.add('hidden');
-
-  hideDocDetails();
 }
 
 
-export const  setupDocDetails = async () => {
+export const setupDocDetails = async () => {
   console.log('@setupDocDetails');
 
   window.showDocDetails = showDocDetails;

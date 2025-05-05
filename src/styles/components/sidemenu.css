@@ -148,5 +148,37 @@
       }
     }
   }
+
+  .stepper_item--active {
+    &:hover {
+      cursor: pointer;
+    }
+
+    .step_text {
+      color: var(--palette-brand-main-darkest);
+    }
+
+    & .stepper_picture_img--active {
+      display: block;
+    }
+
+    & .stepper_picture_img--inactive {
+      display: none;
+    }
+  }
+
+  .stepper_item--inactive {
+    .step_text {
+      /* color: var(--palette-neutral-darkest); */
+    }
+
+    & .stepper_picture_img--active {
+      display: none;
+    }
+
+    & .stepper_picture_img--inactive {
+      display: block;
+    }
+  }
 }
 

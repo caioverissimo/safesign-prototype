@@ -3,17 +3,48 @@
   --palette-brand-main-darkest: #214765;
   --palette-brand-main-darkest2: #2C5477;
   --palette-brand-main-darker:  #366E88;
-  --palette-brand-main-dark:  #7299AC;
+  --palette-brand-main-dark:  #7299AC; /* faltando */
   --palette-brand-main-base:    #367C88;
   --palette-brand-main-base:    rgb(54, 124, 136);
   --palette-brand-main-light:   #366188;
-  /* --palette-brand-main-lighter: #366788; */
+  --palette-brand-main-lighter: #366788;
   --palette-brand-main-lighter: #367C89;
   --palette-brand-main-lightest: #AAD1D8;
   --palette-brand-main-ultralight: #52AABA;
   --palette-brand-main-ultralighter: #4E9CB3;
   --palette-brand-main-ultralighter: rgb(78, 156, 179);
   --palette-brand-main-tint: #367588;
+
+
+
+/* *** TODO: ordenação de escuro para mais claro ***  */
+/* refatorar atualizando as cores e variáveis usando esta versão abaixo */
+/* --palette2-brand-main-ultradarkest:    #214765;
+--palette2-brand-main-ultradark:       #2C5477;
+--palette2-brand-main-darkest:         #366188;   
+--palette2-brand-main-darker:          #366788;   
+--palette2-brand-main-dark:            #366E88;   
+--palette2-brand-main-tint:            #367588;
+
+--palette2-brand-main-base:            #367C88;
+
+--palette2-brand-main-light:           #4E9CB3;
+--palette2-brand-main-lighter:         #52AABA;
+--palette2-brand-main-lightest:        #7299AC;
+--palette2-brand-main-ultralight:      #AAD1D8; */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* SECONDARY (Verde de ação) */
   --palette-brand-secondary-darkest: #2DA853;

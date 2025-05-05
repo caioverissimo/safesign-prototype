@@ -78,6 +78,7 @@
 
 .button-highlight {
   width: 330px;
+  max-width: 50%;
   height: 3.25rem;
   color: white;
   background-color: var(--palette-support-warning-darkest);

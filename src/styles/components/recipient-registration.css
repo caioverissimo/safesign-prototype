@@ -53,6 +53,29 @@
   gap: 1.5rem;
 }
 
+#recipients-panel {
+  .recipients_item:first-child {
+    .recipients-box {
+      background-color: rgba(54, 124, 136, 0.15);
+      border: 1px solid #366e88;
+
+      .recipients_name {
+        color: #366e88;
+      }
+    }
+
+    &.recipients_item--complete {
+      .recipients-box {
+        border: 1px solid var(--palette-highlight-base);
+      }
+  
+      .recipients_name {
+        color: var(--palette-highlight-base);
+      }
+    }
+  }
+}
+
 .recipients_item {
 
   &.recipients_item--complete {
