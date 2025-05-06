@@ -190,6 +190,7 @@
   }
 
   .stepper_picture {
+    position: relative;
     margin-bottom: 0.5rem;
 
     & > div {
@@ -210,6 +211,22 @@
   & .heading {
     @media screen and (min-width: 768px) {
       text-align: center;
+    }
+  }
+
+  .current-step-arrow {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    bottom: -22px;
+    left: 0;
+    transform: rotate(180deg);
+
+    img {
+      width: 24px;
+      height: 24px;
     }
   }
 }
