@@ -83,6 +83,11 @@
   color: white;
   background-color: var(--palette-support-warning-darkest);
   border-radius: 40px;
+  font-size: 0.875rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
 
   &.button-highlight--disabled {
     background-color: var(--palette-hightlight-greyscale-base);
@@ -106,5 +111,11 @@
       background-color: white;
       border: 1px solid var(--palette-hightlight-greyscale-base);  
     }
+  }
+
+  &.button-highlight--bordered {
+    font-weight: 500;
+    border: 3px solid white;
+    outline: 1px solid var(--palette-support-warning-darkest);
   }
 }

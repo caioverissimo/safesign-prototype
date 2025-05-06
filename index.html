@@ -123,11 +123,11 @@
                     </div>
                     <div class="recipients-box_action">
                       <button type="button">
-                        <img src="./src/assets/warning-circle-icon.svg"></button>
-                      </div>
+                      <img src="./src/assets/warning-circle-icon.svg"></button>
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                </li>
+              </ul>
     
               <div class="modal-actions">
                 <button type="button" class="button button-main button-main--lg" onclick="toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false }); toggleDocPicturePage()">
@@ -450,26 +450,6 @@
     </div>
 
     <div id="app-container" page="home-logged-out" class="logged-out">
-      <!-- ATENCAO: este bloco de código está aqui para que o index.html possa atender ao requisito: -->
-      <!-- "(...) garanta que o projeto abra na máquina do professor através do arquivo .HTML. Projetos que não abrirem serão desconsiderados." -->
-
-      <!-- Mas para ver o projeto completo, este projeto precisa ser levantado em algum servidor -->
-      <!-- como o Live Server, por exemplo (como nas aulas) -->
-
-      <!-- <div class="sidemenu">
-        <div class="sidemenu_toggle-strap">
-          <img src="./src/assets/three-dots.svg" />
-        </div>
-
-        <div class="sidemenu_content">
-          <h1 class="brand brand--horizontal"><img src="./src/assets/safesign-logo.svg" /><span>SAFE•SIGN</span></h1>
-
-          <img src="./src/assets/step-sm-active-1.svg" />
-          <img src="./src/assets/step-sm-active-2.svg" />
-          <img src="./src/assets/step-sm-active-3.svg" />
-          <img src="./src/assets/step-sm-active-4.svg" />
-        </div>  
-      </div> -->
       <div id="sidemenu" class="sidemenu" style="display: none;">
         <div class="sidemenu_close-button">
           <button onclick="toggleSideMenu(false)">
@@ -488,7 +468,11 @@
         <div class="sidemenu_content">
       
           <ul class="sidemenu_steps">
-            <li data-step-key="1" class="stepper_item stepper_item--inactive">
+            <li 
+              data-step-key="1" 
+              class="stepper_item stepper_item--inactive"
+              onclick="goToUploadDocsPage(); toggleSideMenu(false)"
+            >
               <div class="stepper_picture">
                 <div  class="stepper_picture_img--active">
                   <img src="./src/assets/step-sm-active-1.svg" />
@@ -502,7 +486,12 @@
                 <span>Faça o upload do seu arquivo</span>
               </div>
             </li>
-            <li data-step-key="2" class="stepper_item stepper_item--inactive">
+
+            <li 
+              data-step-key="2" 
+              class="stepper_item stepper_item--inactive"
+              onclick="goToRecipientRegistrationPage(); toggleSideMenu(false)"
+            >
               <div class="stepper_picture">
                 <div  class="stepper_picture_img--active">
                   <img src="./src/assets/step-sm-active-2.svg" />
@@ -516,7 +505,12 @@
                 <span>Insira o contato do destinatário</span>
               </div>
             </li>
-            <li data-step-key="3" class="stepper_item stepper_item--inactive">
+
+            <li 
+              data-step-key="3" 
+              class="stepper_item stepper_item--inactive"
+              onclick="goToSelfieBiometryPage(); toggleSideMenu(false)"
+            >
               <div class="stepper_picture">
                 <div  class="stepper_picture_img--active">
                   <img src="./src/assets/step-sm-active-3.svg" />
@@ -530,7 +524,12 @@
                 <span>Confirme a identidade com foto</span>
               </div>
             </li>
-            <li data-step-key="4" class="stepper_item stepper_item--inactive">
+
+            <li 
+              data-step-key="4" 
+              class="stepper_item stepper_item--inactive"
+              onclick="goToDocumentSignaturePage(); toggleSideMenu(false)"
+            >
               <div class="stepper_picture">
                 <div  class="stepper_picture_img--active">
                   <img src="./src/assets/step-sm-active-4.svg" />
@@ -567,7 +566,13 @@
             <div class="profile_data">
               <p>Bem-vindo, <br /><span>Caio Veríssimo Barbosa de Medeiros</span></p>
               <div class="profile_action">
-                <button type="button" class="button button-main--outline">Sair</button>
+                <button 
+                  type="button" 
+                  class="button button-main--outline"
+                  onclick="handleLogout()"
+                >
+                  Sair
+                </button>
               </div>
             </div>
             <div class="profile_avatar">
@@ -655,7 +660,13 @@
               <div class="profile_data">
                 <p>Bem-vindo, <span>Caio Veríssimo Barbosa de Medeiros</span></p>
                 <div class="profile_action">
-                  <button type="button" class="button button-main--outline">Sair</button>
+                  <button 
+                    type="button" 
+                    class="button button-main--outline"
+                    onclick="handleLogout()"
+                  >
+                    Sair
+                  </button>
                 </div>
               </div>
               <div class="profile_avatar">

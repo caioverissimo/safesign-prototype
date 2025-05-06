@@ -37,6 +37,18 @@ main {
   }
 }
 
+.main-content_header {
+  margin-bottom: 2rem;
+}
+
+p.content-description {
+  margin: 0 0 1.25rem;
+  font-size: 16px;
+  font-weight: 600;
+  /* color: var(--palette-brand-main-darker); */
+  color: var(--palette-brand-main-dark);
+}
+
 .container {
   max-width: 1360px;
   padding: 0.75rem;

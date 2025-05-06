@@ -26,7 +26,7 @@
 .selfie-box {
   width: 100%;
   height: auto;
-  margin-top: 3rem;
+  margin-top: 0rem;
   position: relative;  
 
   @media screen and (min-width: 768px) {

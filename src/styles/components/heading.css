@@ -29,6 +29,10 @@
     font-size: 1.5rem;
     color: var(--palette-brand-main-ultradark);
 
+    color: var(--palette-brand-main-darker);
+    color: var(--palette-brand-main-dark);
+    color: var(--palette-brand-main-base);
+
     @media screen and (min-width: 768px) {
       font-size: 2.25rem;
     }

@@ -113,9 +113,17 @@ async function handleLoginSubmit(event) {
 
     await delayByMs(500);
 
-    await autoNavigateOnLoad();
+    autoNavigateOnLoad();
   });
 }
+
+export const handleLogout = async () => {
+  console.log('@handleLogout');
+
+  updateStepProgress('login', false);
+
+  autoNavigateOnLoad();
+};
 
 
 export const setupForms = () => {``
@@ -125,6 +133,7 @@ export const setupForms = () => {``
   window.handleSignupSubmit = handleSignupSubmit;
   window.handleTokenSubmit = handleTokenSubmit;
   window.handleLoginSubmit = handleLoginSubmit;
+  window.handleLogout = handleLogout;
 
   bindTokenInputBehaviour();
   bindPhoneMaskBehaviour();

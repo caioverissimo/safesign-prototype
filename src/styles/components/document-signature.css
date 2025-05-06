@@ -37,3 +37,8 @@
     margin-bottom: 0.5rem;
   }
 }
+
+/* .button.button-highlight.button-highlight--right {
+  border: 3px solid white;
+  outline: 1px solid var(--palette-support-warning-darkest);
+} */

@@ -2,25 +2,20 @@
 <div class="container">
   
   <div class="main-content">
-    <!-- <article id="propaganda" class="propaganda">
-      <header class="heading">
-        <h2>Assine documentos digitais com <em>segurança e praticidade</em></h2>
-        <p>Simplifique seus processos e ganhe tempo com nossa plataforma de assinatura digital.</p>
-      </header>
-    </article> -->
 
     <div class="uploaddocs document-signature">
 
-      <div class="uploaddocs-header">
+      <div class="main-content_header uploaddocs-header">
         <header class="heading">
-          <h1>DOCUMENT SIGNATURE</h1>
           <h3>Assinatura e compartilhamento</h3>
         </header>
       </div>
 
       <div class="uploaddocs-content">
         <div class="uploaddocs-documents">
-          <p class="uploaddocs_description">Selecione o arquivo que deseja enviar</p>
+          <p class="content-description uploaddocs_description">
+            Clique em "Assinar" e aplique a assinatura ao(s) documento(s)
+          </p>
     
           <!-- <button class="button button-main button-main--lg" onclick="triggerUpload()">Adicionar documento</button> -->
     
@@ -41,8 +36,50 @@
           
           <input type="file" id="file-upload" accept=".pdf,.jpg,.jpeg,.png" style="display: none;" />
         </div>
+
+        <ul class="recipients-list">
+          <li class="recipients_item recipients_item--complete" onclick="paginateModalAddSignature('doc_to_sign')">
+            <div class="recipients-box">
+              <div class="recipients-box_content">
+                <span class="recipients_name">Caio Veríssimo Barbosa</span>
+                <div class="recipient-tags">
+                  <div class="recipient-tags_item">Assinatura</div>
+                  <div class="recipient-tags_item">Rubrica</div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="recipients_item recipients_item--complete recipients_item--disabled">
+            <div class="recipients-box">
+              <div class="recipients-box_content">
+                <span class="recipients_name">Beltrano de Carvalho</span>
+                <div class="recipient-tags">
+                  <div class="recipient-tags_item">Assinatura</div>
+                  <div class="recipient-tags_item">Rubrica</div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="recipients_item recipients_item--disabled">
+            <div class="recipients-box">
+              <div class="recipients-box_content">
+                <span class="recipients_name">Fulano de Tal</span>
+                <div class="recipient-tags">
+                  <div class="recipient-tags_item recipient-tags_item--outline">SEM Assinatura</div>
+                  <div class="recipient-tags_item recipient-tags_item--outline">SEM Rubrica</div>
+                </div>
+              </div>
+              <div class="recipients-box_action">
+                <button type="button" style="background-color: transparent;">
+                <img src="./src/assets/warning-circle-icon.svg"></button>
+              </div>
+            </div>
+          </li>
+        </ul>
         
-        <div class="uploadarea" onclick="triggerUpload()">
+        <!-- <div class="uploadarea" onclick="triggerUpload()">
           <div class="uploadarea_content">
             <div class="picture">
               <img src="./src/assets/upload-picture.svg" />
@@ -52,18 +89,13 @@
             </div>
           </div>
           <input type="file" id="file-upload" accept=".pdf,.jpg,.jpeg,.png" style="display: none;" />
-        </div>
+        </div> -->
     
-        <div class="docdetails-panel hidden" id="docdetails-panel">
+        <!-- <div class="docdetails-panel hidden" id="docdetails-panel">
           <header>
             <h4 id="docdetails-title">Detalhe do documento</h4>
             <span class="uploaddocs_doc-tag">doc 1</span>
           </header>
-        
-          <!-- <div class="docdetails-thumbnail">
-            <img src="./src/assets/doc-thumb-picture-1.png" alt="Document thumbnail" />
-            <button type="button" class="button--remove-thumb" onclick="handleDeleteDoc()">✕</button>
-          </div> -->
     
           <form 
             id="forms-docdetails" 
@@ -90,7 +122,7 @@
               </fieldset>
             </div>
           </form>
-        </div>
+        </div> -->
       </div>      
     </div>
 
@@ -100,12 +132,18 @@
 <aside data-aside-step-key="4">
   <div class="container">
     <div class="progress-navigation-buttons">
-      <button class="button button-highlight button-highlight--outline button-highlight--left" onclick="goToSelfieBiometryPage()">
+      <button 
+        class="button button-highlight button-highlight--outline button-highlight--left" 
+        onclick="goToSelfieBiometryPage()"
+      >
         validar com selfie
       </button>
       
-      <button class="button button-highlight button-highlight--right button-highlight--disabled" onclick="console.log('!!!compartilhar e enviar solicitações de assinatura')"">
-        solicitar demais assinaturas
+      <button 
+        class="button button-highlight button-highlight--right button-highlight--disabled button-highlight--bordered" 
+        onclick="console.log('!!!compartilhar e enviar solicitações de assinatura')"
+      >
+        solicitar assinaturas
       </button>
     </div>
   </div>
