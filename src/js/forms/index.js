@@ -101,18 +101,17 @@ async function handleLoginSubmit(event) {
 
     if (!current.register || !current.authenticate) {
       console.error('Erro: O usuário ainda não completou o registro ou a autenticação.');
+
+      toggleFloatingComponent('modal-login', { shouldHaveLoader: false });
+      await delayByMs(300);
+      toggleFloatingComponent('modal-login-warning', { shouldHaveLoader: false });
+
       return;
     }
 
-    console.log('Login autorizado, salvando login = true');
-    // stepDataStore.set({ ...current, login: true });
     updateStepProgress('login');
-
-    // Você pode adicionar alguma ação, tipo fechar modal
-    toggleFloatingComponent('modal-login', { shouldHaveLoader: false })
-
+    toggleFloatingComponent('modal-login', { shouldHaveLoader: false });
     await delayByMs(500);
-
     autoNavigateOnLoad();
   });
 }
