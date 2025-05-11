@@ -1,4 +1,3 @@
-// src/js/stores/signaturesStore.js
 import { useSessionStorage } from '../helpers/useSessionStorage.js';
 
 const defaultSignatures = [

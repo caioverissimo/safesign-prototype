@@ -11,7 +11,7 @@ export const paginateModalSignup = async (pageId) => {
   const paginationItem =  $(`#pagination-item_${pageId}`)
   const page = $(`#${pageId}`);
   const pageDisplay = page.css('display');
-  // const modalContent = $(`.modal-content`);
+  
   const modalContent = $(`#modal-signup`).find('.modal-content');
 
   paginationItem.parent().children().removeClass('pagination_item--active');
@@ -33,14 +33,9 @@ export const paginateModalAddSignature = async (pageId) => {
   if (!pageId) {
     throw Error("The 'page id' is missing!")
   }
-
-//   signatures_to_sign
-// doc_to_sign
-
   const paginationItem =  $(`#pagination-item_${pageId}`)
   const page = $(`#${pageId}`);
   const pageDisplay = page.css('display');
-  // const modalContent = $(`.modal-content`);
   const modalContent = $(`#modal-add-signature`).find('.modal-content');
 
   paginationItem.parent().children().removeClass('pagination_item--active');

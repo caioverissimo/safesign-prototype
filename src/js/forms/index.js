@@ -31,13 +31,12 @@ export const bindTokenInputBehaviour = () => {
 export const bindPhoneMaskBehaviour = () => {
   console.log('@setupForms | bindPhoneMaskBehaviour');
 
-  // document.addEventListener('DOMContentLoaded', function () {
     const phoneInput = document.getElementById('phone');
   
     if (phoneInput) {
       phoneInput.addEventListener('input', function (e) {
-        let numbers = e.target.value.replace(/\D/g, ''); // Remove non-digits
-        numbers = numbers.substring(0, 11); // Limit to 11 numbers
+        let numbers = e.target.value.replace(/\D/g, '');
+        numbers = numbers.substring(0, 11);
   
         if (numbers.length > 0) {
           numbers = numbers.replace(/^(\d{2})(\d)/g, '($1) $2');
@@ -57,7 +56,7 @@ export const bindPhoneMaskBehaviour = () => {
 export async function handleSubmit(event, onSuccessCallback) {
   const form = event.target;
   if (!form.checkValidity()) {
-    // Let the browser show the default error popups
+
     return;
   }
   
@@ -72,9 +71,6 @@ export async function handleSubmit(event, onSuccessCallback) {
 function handleSignupSubmit(event) {
   handleSubmit(event, () => {
     console.log('Cadastro enviado, salvando register = true');
-    // const stepDataStore = window.stepDataStore;
-    // const current = stepDataStore.get();
-    // stepDataStore.set({ ...current, register: true });
 
     updateStepProgress('register');
 
@@ -85,9 +81,6 @@ function handleSignupSubmit(event) {
 function handleTokenSubmit(event) {
   handleSubmit(event, () => {
     console.log('Token autorizado, salvando authenticate = true');
-    // const stepDataStore = window.stepDataStore;
-    // const current = stepDataStore.get();
-    // stepDataStore.set({ ...current, authenticate: true });
     updateStepProgress('authenticate');
 
     toggleFloatingComponent('modal-signup');

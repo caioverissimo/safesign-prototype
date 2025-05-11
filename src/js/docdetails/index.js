@@ -10,7 +10,6 @@ export function showDocDetails(doc) {
   console.log('@showDocDetails');
 
   const panel = document.getElementById('docdetails-panel');
-  // document.getElementById('docdetails-title').textContent = doc.tag || 'Doc';
   document.getElementById('docdetails-title').textContent = 'Detalhe do documento';
 
   document.getElementById('doc_name').value = doc?.name || '';
@@ -39,7 +38,7 @@ export function handleSaveDoc() {
   const request = document.getElementById('doc_request_name').value;
 
   const docs = window.uploadDocsStore.get();
-  const selectedIndex = getSelectedDocIndex(); // Implement based on selection state
+  const selectedIndex = getSelectedDocIndex();
   const doc = docs[selectedIndex];
 
   docs[selectedIndex] = { ...doc, name, request };
@@ -53,7 +52,7 @@ export function handleSaveDoc() {
 export const handleDeleteDoc = async () => {
   console.log('@handleDeleteDoc');
   const docs = window.uploadDocsStore.get();
-  const selectedIndex = getSelectedDocIndex(); // Implement yourself
+  const selectedIndex = getSelectedDocIndex();
   docs.splice(selectedIndex, 1);
   window.uploadDocsStore.set(docs);
   renderUploadedDocs();

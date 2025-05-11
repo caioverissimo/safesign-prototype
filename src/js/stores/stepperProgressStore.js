@@ -68,22 +68,3 @@ export function createStepperProgressStore() {
     reset,
   };
 }
-
-
-
-
-// NOTE: USAGE
-
-// import { createStepperProgressStore } from '../stores/stepperProgressStore';
-
-// const stepperProgress = createStepperProgressStore();
-
-// // Mark step1 as completed
-// stepperProgressStore.setStep('step1', true);
-
-// // Read progress (returns { step1: true, step2: false, step3: false, step4: false })
-// const progress = stepperProgressStore.get();
-// console.log(progress);
-
-// // Reset all progress
-// stepperProgressStore.reset();

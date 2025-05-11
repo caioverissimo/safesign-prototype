@@ -38,16 +38,6 @@ const addSignTagToDocument = async () => {
   docpictureTag.classList.remove('hidden');
 };
 
-// const resetSignTagPresentationRules = async () => {
-//   console.log('@resetSignTagPresentationRules');
-
-//   const docpicture = document.querySelector('#docpicture');
-//   const docpictureTag = document.querySelector('#docpicture-tag');
-
-//   docpicture.classList.remove('hidden');
-//   docpictureTag.classList.add('hidden');
-// };
-
 export const setupDocumentSignature = async () => {
   console.log('@setupDocumentSignature');
 

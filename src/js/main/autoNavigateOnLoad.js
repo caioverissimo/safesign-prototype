@@ -8,31 +8,7 @@ const navigator = navigation();
 
 export async function autoNavigateOnLoad() {
   console.log('@autoNavigateOnLoad');
-  
   const stepData = window.stepDataStore.get();
-
-  // if (!stepData.register) {
-  //   // Usuário não começou nem o registro
-  //   await navigate(PageEnum.HOME_LOGGED_OUT);
-  //   return;
-  // }
-
-  // if (stepData.register && !stepData.authenticate) {
-  //   // Começou registro, mas não autenticou ainda
-  //   await navigate(PageEnum.HOME_UNAUTHENTICATED);
-  //   return;
-  // }
-
-  // if (!stepData.authenticate) {
-  //   await navigate(PageEnum.HOME_UNAUTHENTICATED);
-  //   return;
-  // }
-
-  // if (stepData.register && stepData.authenticate && !stepData.login) {
-  //   // Terminou registro e autenticação, mas ainda não fez login
-  //   await navigate(PageEnum.HOME_UNAUTHENTICATED);
-  //   return;
-  // }
 
   const isLoggedIn = stepData.register && stepData.authenticate && stepData.login;
 
@@ -51,7 +27,6 @@ export async function autoNavigateOnLoad() {
 
 
   if (!isLoggedIn) {
-    // Terminou registro e autenticação, mas ainda não fez login
     await navigator.navigate(PageEnum.HOME_UNAUTHENTICATED);
     app.classList.add('logged-out');
     app.classList.remove('logged-in');
@@ -84,21 +59,14 @@ export async function autoNavigateOnLoad() {
       }
       
       navigator.navigate(hash);
-      // if (hash === PageEnum.UPLOAD_DOCS) {
-      //   await delayByMs(3000);
-      //   renderUploadedDocs();
-      // }
 
       return;
     }
 
-    // Tudo feito: registro + autenticação + login
     await navigator.navigate(PageEnum.HOME_LOGGED_IN);
-    // app.classList.add('logged-in');
-    // app.classList.remove('logged-out');
+
     return;
   }
 
-  // Se cair aqui é porque algo tá inconsistente
   console.error('🚨 Estado inválido detectado no stepDataStore.', stepData);
 }

@@ -10,7 +10,6 @@ export const PageLoader = (() => {
       return;
     }
 
-    // const mainContainer = document.querySelector('#app-container');
     const mainContainer = document.querySelector('#main');
 
     if (!mainContainer) {
@@ -19,7 +18,7 @@ export const PageLoader = (() => {
     }
 
     try {
-      await fadeOut(mainContainer); // 👉 FADE OUT
+      await fadeOut(mainContainer);
 
       const response = await fetch(url);
       const html = await response.text();
@@ -27,7 +26,7 @@ export const PageLoader = (() => {
       mainContainer.innerHTML = html;
 
       window.pageStore.set(pageEnum);
-      fadeIn(mainContainer); // 👉 FADE IN
+      fadeIn(mainContainer);
       console.log(`✅ Page loaded: ${pageEnum}`);
     } catch (error) {
       console.error(`❌ Failed to load page: ${pageEnum}`, error);

@@ -1,28 +1,6 @@
 import { updateStepperUI } from "../stepper-navigation/index.js";
 
 const showSignaturePanel = (index) => {
-  // const panel = document.getElementById('signature-panel');
-  // const canvas = panel.querySelector('.signature-canvas img');
-  // const salvarBtn = panel.querySelector('button.button-main');
-  // const recipientsPanel = document.getElementById('recipients-panel');
-
-  // const signatures = window.signaturesStore.get();
-  // const selected = signatures[index];
-
-  // canvas.src = selected.signatureFile;
-  // canvas.alt = `Assinatura de ${selected.name}`;
-
-  // if (selected.isSelf) {
-  //   salvarBtn.removeAttribute('disabled');
-  // } else {
-  //   salvarBtn.setAttribute('disabled', 'disabled');
-  // }
-
-  // panel.classList.remove('hidden');
-  // recipientsPanel.classList.add('hidden');
-
-  // window.currentSignatureIndex = index;
-
   const panel = document.getElementById('signature-panel');
   const recipientsPanel = document.getElementById('recipients-panel');
 
@@ -123,16 +101,13 @@ export const renderSignaturePanel = (index) => {
   const signatures = window.signaturesStore.get();
   const recipient = signatures[index];
 
-  // Clear previous content
   panel.innerHTML = '';
 
-  // -- Heading
   const heading = document.createElement('header');
   heading.className = 'heading';
   heading.innerHTML = `<h4>Cadastrar Assinatura</h4>`;
   panel.appendChild(heading);
 
-  // -- Top box with name, tags and warning icon
   const topBox = document.createElement('div');
   topBox.className = 'recipients-box';
 
@@ -169,13 +144,11 @@ export const renderSignaturePanel = (index) => {
   topBox.appendChild(action);
 
   panel.appendChild(topBox);
-
-  // -- Label
   const label = document.createElement('p');
   label.textContent = 'Assine na área disponível abaixo:';
   panel.appendChild(label);
 
-  // -- Signature image (simulated canvas)
+
   const canvas = document.createElement('div');
   canvas.className = 'signature-canvas';
 
@@ -186,7 +159,6 @@ export const renderSignaturePanel = (index) => {
 
   panel.appendChild(canvas);
 
-  // -- Buttons
   const actions = document.createElement('div');
   actions.className = 'action_group';
 
@@ -198,7 +170,7 @@ export const renderSignaturePanel = (index) => {
   const clearButton = document.createElement('button');
   clearButton.className = 'button button-main--outline';
   clearButton.textContent = 'Limpar';
-  clearButton.setAttribute('disabled', true); // you can enable if drawing is implemented
+  clearButton.setAttribute('disabled', true);
 
   actions.appendChild(saveButton);
   actions.appendChild(clearButton);

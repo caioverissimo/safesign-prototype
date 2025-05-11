@@ -1,8 +1,7 @@
 import { stepperNodeToPageMapper } from '../pageLoader/stepperNodeToPageMapper.js';
-import { navigation } from '../pageLoader/navigation.js'; // or where you defined it
+import { navigation } from '../pageLoader/navigation.js';
 import { delayByMs } from '../helpers/delayByMs.js';
-// import {updateStepperClickableClasses} from './updateStepperVisual.js'
-// import { setupStepperClickListeners } from './stepperClickable.js'
+
 import { triggerClickableStepper } from './triggerClickableStepper.js'
 
 export const onStepperClick = (stepKey) =>  {
@@ -18,9 +17,5 @@ export const onStepperClick = (stepKey) =>  {
 export const setupStepper = async () => { 
   console.log('@setupStepper');
   
-  // updateStepperClickableClasses();
-
-  // await delayByMs(5000);
-  // setupStepperClickListeners();
   window.triggerClickableStepper = triggerClickableStepper;
 };

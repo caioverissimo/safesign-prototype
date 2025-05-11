@@ -26,9 +26,6 @@ export function navigation() {
   };
 }
 
-
-
-
 // ATTENTION: this is the pushState approach using routing
 // for this, we need to use a server
 // import { pageSourceMapper } from './pageSourceMapper.js';

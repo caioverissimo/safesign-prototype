@@ -1,12 +1,5 @@
-// export function triggerUpload() {
-//   console.log('@setupUploadArea | triggerUpload');
-
 import { delayByMs } from "../helpers/delayByMs.js";
 import { addUploadedDoc } from "../uploaddocs/index.js";
-
-//   const fileInput = document.getElementById('file-upload');
-//   fileInput.click();
-// }
 
 export function triggerUpload() {
   console.log('@setupUploadArea | triggerUpload');
@@ -21,20 +14,16 @@ export function triggerUpload() {
     const docs = window.uploadDocsStore.get();
 
 
-    // Simulate adding to store
     const doc = {
-      id: Date.now(), // unique id
+      id: Date.now(),
       name: file.name,
       tag: `doc ${docs.length + 1}`,
     };
     console.log('Arquivo selecionado:', file.name);
-    // window.uploadDocsStore.add(doc);
 
     addUploadedDoc(doc);
 
-    renderUploadedDocs(); // call render after adding
-    // await delayByMs(500);
-    // window.lo
+    renderUploadedDocs();
   };
 }
 
@@ -47,7 +36,6 @@ export const bindUploadAreaBehaviour = () => {
   
     if (file) {
       console.log('Arquivo selecionado:', file.name);
-      // Aqui você pode mostrar o nome do arquivo, ou fazer preview se quiser
     }
   });
 };

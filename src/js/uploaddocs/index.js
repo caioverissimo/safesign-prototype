@@ -29,8 +29,6 @@ const toggleDocSelected = (dataDocKey) => {
 
 export const addUploadedDoc = (doc) => {
   console.log('@addUploadedDoc');
-  // const docs = window.uploadDocsStore.get();
-
   window.uploadDocsStore.add(doc);
 
   updateStepperUI();
@@ -43,30 +41,13 @@ export const renderUploadedDocs = async () => {
   const list = document.querySelector('.uploaddocs_actions');
   const docs = window.uploadDocsStore.get();
 
-  // Clear list before re-render
-
   if (list && docs) {
     list.innerHTML = '';
 
-    // Re-render each doc
     docs.forEach(async (doc, index) => {
-      // const li = document.createElement('li');
-      // li.className = 'uploaddocs_action-item';
-      // li.setAttribute('data-doc-key', index);
-      // li.setAttribute('onclick', `toggleDocSelected(${index})`);
-  
-      // li.innerHTML = `
-      //   <button type="button" class="uploaddocs_action-button">
-      //     <img src="./src/assets/doc-thumb-picture-1.png" />
-      //   </button>
-      // `;
-  
-      // list.appendChild(li);
-
       const li = document.createElement('li');
       li.className = 'uploaddocs_action-item';
       li.setAttribute('data-doc-key', index);
-      // li.setAttribute('onclick', `toggleDocSelected(${index})`);
 
       const box = document.createElement('div');
       box.className = 'uploaddocs_action-box';
@@ -138,9 +119,9 @@ export const renderUploadedDocs = async () => {
       } else {
         statusButton.textContent = doc.signed ? 'Assinado' : 'Assinar';
         statusButton.classList.add(doc.signed ? 'signed' : 'unsigned');
-        // statusButton.onclick = (event) => toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false });
+
         statusButton.onclick = (event) => {
-          window.selectedDocIndex = index; // 👈 salva o index globalmente
+          window.selectedDocIndex = index;
           toggleFloatingComponent('modal-add-signature', { shouldHaveLoader: false });
         };
       }
@@ -151,21 +132,8 @@ export const renderUploadedDocs = async () => {
       list.appendChild(li);
     });
 
-    // updateStepperProgressStore();
-    // if (list.childNodes.length) {
-    //   const disabledHightlightButton = document.querySelector('.button-highlight--disabled');
-
-    //   if (disabledHightlightButton) {
-    //     disabledHightlightButton.classList?.remove('button-highlight--disabled');
-    //     disabledHightlightButton.removeAttribute('disabled');
-    //   }
-    // } else {
-    //   const hightlightEnabledButton = document.querySelector('.button-highlight--right');
-    //   hightlightEnabledButton.classList.add('button-highlight--disabled');
-    // }
     updateStepperUI();
   
-    // Add the "+" button at the end
     const plusLi = document.createElement('li');
     plusLi.className = 'uploaddocs_action-item';
     plusLi.innerHTML = `
@@ -186,16 +154,10 @@ export const renderUploadedDocs = async () => {
 
   const hash = navigator.getRoute();
 
-  // if (hash !== PageEnum.UPLOAD_DOCS) {
-  //   console.log('#######ENTROU')
-  //   goToUploadDocsPage();
-  // }
   if (hash === PageEnum.HOME_LOGGED_IN) {
     console.log('#######ENTROU')
     goToUploadDocsPage();
   }
-
-  // window.location.reload();
 }
 
 export const setupUploadDocs = () => {
