@@ -2,7 +2,7 @@ import { useSessionStorage } from '../helpers/useSessionStorage.js';
 import { SESSION_KEYS } from '../data/sessionKeys.js';
 import { delayByMs } from '../helpers/delayByMs.js';
 import { autoNavigateOnLoad } from '../main/autoNavigateOnLoad.js'
-
+import { toggleLoader } from "../loader/index.js";
 
 function updateStepProgress(key, value = true) {
   const stepDataStore = window.stepDataStore;
@@ -78,12 +78,18 @@ function handleSignupSubmit(event) {
   });
 }
 
-function handleTokenSubmit(event) {
-  handleSubmit(event, () => {
+async function handleTokenSubmit(event) {
+  handleSubmit(event, async () => {
     console.log('Token autorizado, salvando authenticate = true');
     updateStepProgress('authenticate');
 
     toggleFloatingComponent('modal-signup');
+
+    toggleLoader();
+    await delayByMs(1000);
+
+    toggleFloatingComponent('modal-login');
+    toggleLoader();
   });
 }
 
