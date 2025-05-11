@@ -203,14 +203,11 @@ export function addRecipient() {
 
   window.signaturesStore.set([...currentList, newRecipient]);
 
-  // limpa o form
   nameInput.value = '';
   emailInput.value = '';
 
-  // re-renderiza a lista
   renderRecipients();
 
-  // força o update da UI do stepper
   updateStepperUI();
 }
 

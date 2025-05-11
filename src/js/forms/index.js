@@ -31,26 +31,25 @@ export const bindTokenInputBehaviour = () => {
 export const bindPhoneMaskBehaviour = () => {
   console.log('@setupForms | bindPhoneMaskBehaviour');
 
-    const phoneInput = document.getElementById('phone');
-  
-    if (phoneInput) {
-      phoneInput.addEventListener('input', function (e) {
-        let numbers = e.target.value.replace(/\D/g, '');
-        numbers = numbers.substring(0, 11);
-  
-        if (numbers.length > 0) {
-          numbers = numbers.replace(/^(\d{2})(\d)/g, '($1) $2');
-        }
-        if (numbers.length > 9) {
-          numbers = numbers.replace(/(\d{5})(\d{4})$/, '$1-$2');
-        } else if (numbers.length > 6) {
-          numbers = numbers.replace(/(\d{4})(\d{0,4})$/, '$1-$2');
-        }
-  
-        e.target.value = numbers;
-      });
-    }
-  // });
+  const phoneInput = document.getElementById('phone');
+
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function (e) {
+      let numbers = e.target.value.replace(/\D/g, '');
+      numbers = numbers.substring(0, 11);
+
+      if (numbers.length > 0) {
+        numbers = numbers.replace(/^(\d{2})(\d)/g, '($1) $2');
+      }
+      if (numbers.length > 9) {
+        numbers = numbers.replace(/(\d{5})(\d{4})$/, '$1-$2');
+      } else if (numbers.length > 6) {
+        numbers = numbers.replace(/(\d{4})(\d{0,4})$/, '$1-$2');
+      }
+
+      e.target.value = numbers;
+    });
+  }
 };
 
 export async function handleSubmit(event, onSuccessCallback) {
@@ -84,12 +83,6 @@ async function handleTokenSubmit(event) {
     updateStepProgress('authenticate');
 
     toggleFloatingComponent('modal-signup');
-
-    // window.simulateLoading({ 
-    //   callbackFn: () => { 
-    //     toggleFloatingComponent('modal-login')
-    //   },
-    // });
 
     window.simulateLoading(1000, () => { 
       toggleFloatingComponent('modal-login')

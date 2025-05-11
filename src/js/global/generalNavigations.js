@@ -16,17 +16,6 @@ export const goToUploadDocsPage = async () => {
   console.log('@goToUploadDocsPage');
   navigator.navigate(PageEnum.UPLOAD_DOCS);
 
-  // await delayByMs(3000);
-
-  // renderUploadedDocs();
-
-  // window.simulateLoading({
-  //   intervalInMs: 3000,
-  //   callbackFn: () => {
-  //     renderUploadedDocs();
-  //   }
-  // });
-
   window.simulateLoading(3000, () => {
     renderUploadedDocs();
   });
@@ -35,13 +24,6 @@ export const goToUploadDocsPage = async () => {
 export const goToRecipientRegistrationPage = async () => {
   console.log('@goToRecipientRegistrationPage');
   navigator.navigate(PageEnum.RECIPIENT_REGISTRATION);
-
-  
-  // await delayByMs(3000);
-  
-  // updateStepperUI();
-
-  // renderRecipients();
 
   window.simulateLoading(3000, function() {
     updateStepperUI();
@@ -53,10 +35,6 @@ export const goToSelfieBiometryPage = async () => {
   console.log('@goToSelfieBiometryPage');
   navigator.navigate(PageEnum.SELFIE_BIOMETRY);
 
-  // await delayByMs(3000);
-  
-  // updateStepperUI();
-
   window.simulateLoading(3000, () => {
     updateStepperUI();
   });
@@ -66,9 +44,6 @@ export const goToDocumentSignaturePage = async () => {
   console.log('@goToDocumentSignaturePage');
   navigator.navigate(PageEnum.DOCUMENT_SIGNATURE);
 
-  // await delayByMs(3000);
-
-  // renderUploadedDocs();
   window.simulateLoading(3000, () => {
     renderUploadedDocs();
   });
