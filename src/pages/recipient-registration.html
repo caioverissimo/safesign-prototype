@@ -31,35 +31,37 @@
                 <div class="forms_input">
                   <label for="full_name">nome completo:</label>
                   <input 
-                    type="text" 
-                    id="full_name" 
-                    name="full_name" 
-                    minlength="10" 
-                    maxlength="100" 
-                    size="60" 
-                    autocomplete="name" 
+                    type="text"
+                    id="recipient_full_name"
+                    name="full_name"
+                    minlength="10"
+                    maxlength="100"
+                    size="60"
+                    autocomplete="name"
+                    required
                   />
                 </div>
               
                 <div class="forms_input">
                   <label for="email">Email:</label>
                   <input 
-                    type="email" 
-                    id="email"
-                    name="email" 
-                    minlength="5" 
-                    maxlength="254" 
-                    size="35" 
-                    autocomplete="email" 
+                    type="email"
+                    id="recipient_email"
+                    name="email"
+                    minlength="5"
+                    maxlength="254"
+                    size="35"
+                    autocomplete="email"
+                    required                  
                   />
                 </div>
               
                 <div class="modal-actions">
                   <button 
                     class="button button-main button-main--lg" 
-                    onclick="handleSaveDoc()"
+                    onclick="addRecipient()"
                   >
-                      definir destinatário
+                    definir destinatário
                   </button>
                 </div>
               </fieldset>

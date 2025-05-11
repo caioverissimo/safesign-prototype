@@ -141,3 +141,9 @@
     background-color: var(--palette-neutral-lighter);
   }
 }
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px var(--palette-neutral-lighter) inset !important;
+  -webkit-text-fill-color: var(--palette-brand-main-dark) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

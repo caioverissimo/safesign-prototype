@@ -8,7 +8,7 @@ import { setupModals } from '../modals/index.js';
 import { setupUploadArea } from '../uploadarea/index.js';
 import { setupUploadDocs } from '../uploaddocs/index.js';
 import { setupSideMenu } from '../sidemenu/index.js';
-import { toggleLoader } from '../loader/index.js';
+import { setupLoader, toggleLoader } from '../loader/index.js';
 import { createPageStore } from '../stores/pageStore.js';
 import { createStepperProgressStore } from '../stores/stepperProgressStore.js';
 import { autoNavigateOnLoad } from './autoNavigateOnLoad.js'
@@ -59,6 +59,7 @@ export const setupMain = async () => {
 
   await delayByMs(1000);
 
+  setupLoader();
   setupForms();
   setupModals();
   setupUploadArea();
@@ -91,32 +92,3 @@ export const main = async () => {
   await delayByMs(1500);
   toggleLoader();
 };
-
-
-
-// Example of a logout function
-// export async function logout() {
-//   const navigator = navigation();
-  
-//   // Clear login flags
-//   window.stepDataStore.set({
-//     register: false,
-//     authenticate: false,
-//     login: false,
-//   });
-
-//   await navigator.navigate(PageEnums.HOME_LOGGED_OUT);
-// }
-
-// Example of login success function
-// export async function loginSuccess() {
-//   const navigator = navigation();
-  
-//   window.stepDataStore.set({
-//     register: true,
-//     authenticate: true,
-//     login: true,
-//   });
-
-//   await navigator.navigate(PageEnums.HOME_LOGGED_IN);
-// }

@@ -178,6 +178,42 @@ export const renderSignaturePanel = (index) => {
   panel.appendChild(actions);
 };
 
+export function addRecipient() {
+  const nameInput = document.getElementById('recipient_full_name');
+  const emailInput = document.getElementById('recipient_email');
+
+  const name = nameInput?.value?.trim();
+  const email = emailInput?.value?.trim();
+
+  if (!name || !email) {
+    console.warn('Preencha nome e email!');
+    return;
+  }
+
+  const currentList = window.signaturesStore.get();
+
+  const newRecipient = {
+    name,
+    email,
+    signature: true,
+    initials: true,
+    signatureFile: './src/assets/signature-draw-placeholder-picture.png', // ajuste se necessário
+    isSelf: false,
+  };
+
+  window.signaturesStore.set([...currentList, newRecipient]);
+
+  // limpa o form
+  nameInput.value = '';
+  emailInput.value = '';
+
+  // re-renderiza a lista
+  renderRecipients();
+
+  // força o update da UI do stepper
+  updateStepperUI();
+}
+
 export const setupRecipients = () => {
   console.log('@setupRecipients');
 
@@ -186,4 +222,5 @@ export const setupRecipients = () => {
   window.renderRecipients = renderRecipients;
   window.renderRecipients = renderRecipients;
   window.toggleRecipientSignature = toggleRecipientSignature;
+  window.addRecipient = addRecipient;
 };

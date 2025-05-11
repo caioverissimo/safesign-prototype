@@ -31,9 +31,7 @@ export const triggerClickableStepper = async (event) => {
           }
         }
       }
-
   }
-
 };
 
 

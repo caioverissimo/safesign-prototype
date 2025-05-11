@@ -11,12 +11,12 @@ export function navigation() {
     }
 
     await PageLoader.loadPageByEnum(pageEnumKey);
-    window.location.hash = pageEnumKey; // Set URL hash
+    window.location.hash = pageEnumKey; 
     window.pageStore.set(pageEnumKey);
   }
 
   function getRoute() {
-    const hash = window.location.hash.slice(1); // Remove the "#"
+    const hash = window.location.hash.slice(1);
     return hash || null;
   }
 

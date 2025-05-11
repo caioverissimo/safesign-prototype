@@ -91,6 +91,7 @@
 
   &.button-highlight--disabled {
     background-color: var(--palette-hightlight-greyscale-base);
+    cursor: not-allowed;
   }
 
   &.button-highlight--left {
@@ -109,7 +110,7 @@
     &.button-highlight--disabled {
       color: var(--palette-hightlight-greyscale-base);
       background-color: white;
-      border: 1px solid var(--palette-hightlight-greyscale-base);  
+      border: 1px solid var(--palette-hightlight-greyscale-base);
     }
   }
 

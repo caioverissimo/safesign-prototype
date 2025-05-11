@@ -85,11 +85,15 @@ async function handleTokenSubmit(event) {
 
     toggleFloatingComponent('modal-signup');
 
-    toggleLoader();
-    await delayByMs(1000);
+    // window.simulateLoading({ 
+    //   callbackFn: () => { 
+    //     toggleFloatingComponent('modal-login')
+    //   },
+    // });
 
-    toggleFloatingComponent('modal-login');
-    toggleLoader();
+    window.simulateLoading(1000, () => { 
+      toggleFloatingComponent('modal-login')
+    });
   });
 }
 

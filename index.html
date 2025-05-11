@@ -465,7 +465,12 @@
             <header class="modal-header">
               <h3><img src="./src/assets/safesign-logo.svg" /><span>SAFE•SIGN</span></h3>
             </header>
-            <p>Não encontramos seu cadastro.<br />Você precisa se registrar antes de fazer login.</p>
+
+            <div class="modal-body">
+              <p><strong>Não encontramos seu cadastro!</strong></p>
+              <p>Você precisa se registrar antes de fazer login..</p>
+            </div>
+            
             <div class="modal-actions">
               <button 
                 type="button" 
@@ -473,6 +478,44 @@
                 onclick="toggleFloatingComponent('modal-login-warning', { shouldHaveLoader: false }); toggleFloatingComponent('modal-signup', { shouldHaveLoader: false }); paginateModalSignup('forms-signup');"
               >
                 Fazer Cadastro
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-finish-flow" class="modal-overlay" style="display: none">
+      <div class="modal-wrapper">
+        <div class="modal-box">
+          <div 
+            class="close-button modal_close-button" 
+            onclick="toggleFloatingComponent('modal-finish-flow', { shouldHaveLoader: false })"
+          >
+            <span>
+              <img src="./src/assets/x-icon.svg" />
+            </span>
+          </div>
+
+          <div class="modal-content">
+            <header class="modal-header">
+              <h3>
+                <img src="./src/assets/safesign-logo.svg" /><span>SAFE•SIGN</span>
+              </h3>
+            </header>
+
+            <div class="modal-body">
+              <p><strong>Assinatura concluída com sucesso!</strong></p>
+              <p>Os documentos foram assinados e compartilhados.</p>
+            </div>
+
+            <div class="modal-actions">
+              <button 
+                type="button" 
+                class="button button-main button-main--lg"
+                onclick="toggleFloatingComponent('modal-finish-flow', { shouldHaveLoader: false }); goToLoggedInPage(); handleLogout()"
+              >
+                Voltar para tela inicial
               </button>
             </div>
           </div>
