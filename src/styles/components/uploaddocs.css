@@ -52,16 +52,6 @@
 .uploaddocs_action-item {
   position: relative;
   width: 150px;
-  /* height: 145px; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background-color: var(--palette-neutral-lighter); */
-
-  /* &.uploaddocs_action-item--selected {
-    background-color: var(--palette-brand-main-ultralight);
-  } */
 
   &:hover {
     .uploads_action-hover {
@@ -125,7 +115,7 @@
   padding: 0 0.75rem;
   height: 22px;
   line-height: 22px;
-  background-color: var(--palette-neutral-lightest); /* Or #F6F7F9 if not defined */
+  background-color: var(--palette-neutral-lightest);
   border: 1px solid var(--palette-brand-main-ultralight);
   color: var(--palette-brand-main-base);
   font-weight: 600;
@@ -165,12 +155,10 @@
   height: 100%;
   padding: 0.175rem;
   position: absolute;
-  /* display: none; */
   display: flex;
   flex-direction: column;
   top: 0;
   left: 0;
-  /* background-color: rgba(var(--palette-highlight-light), 0.6); */
   background-color: rgba(223, 78, 16, 0.6);
   border-radius: 8px;
   z-index: 1;

@@ -21,7 +21,6 @@
 
 .recipient-data {
   width: 100%;
-  /* margin-top: 3rem; */
   position: relative;
 
   @media screen and (min-width: 768px) {
@@ -31,7 +30,6 @@
 
 .recipients {
   width: 100%;
-  /* margin-top: 3rem; */
   position: relative;
 
 
@@ -147,7 +145,6 @@
     display: inline-flex;
     width: 40px;
     height: 40px;
-    /* background-color: transparent; */
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
     cursor: pointer;
@@ -159,10 +156,6 @@
     img {
       width: 36px;
       height: 36px;
-      /* position: absolute;
-      top: -2px;
-      right: 0;
-      left: 0; */
     }
   }
 }

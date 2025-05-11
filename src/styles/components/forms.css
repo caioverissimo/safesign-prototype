@@ -24,17 +24,14 @@
 
   input {
     outline: none;
-    /* border: 1px solid #ccc; */
     border: 1px solid var(--palette-neutral-lightest);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
   
   input:focus,
   input:active {
-    /* border-color: orange; */
     border-color: var(--palette-highlight-light);
-    /* box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.4); */
-    box-shadow: 0 0 0 3px rgba(214, 109, 56, 0.4); /* optional soft glow */
+    box-shadow: 0 0 0 3px rgba(214, 109, 56, 0.4);
   }
   
   input:hover {

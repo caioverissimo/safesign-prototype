@@ -17,8 +17,6 @@
   span {
     display: inline-flex;
     margin-bottom: 1rem;
-    /* color: var(----palette-brand-main-darkest) !important; */
-    /* color: orange; */
     font-weight: 500;
     color: #fff;
   }
@@ -34,12 +32,6 @@
     justify-content: space-between;
   }
 }
-
-/* .footer_util-links, .footer_info {
-  span {
-    color: #fff;
-  }
-} */
 
 .footer_util-links {
   ul {

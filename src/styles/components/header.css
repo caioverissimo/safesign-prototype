@@ -24,28 +24,6 @@
     display: block;
   }
 
-  /* .profile {
-    display: none;
-
-    @media screen and ( min-width: 768px) {
-      display: flex;
-    }
-
-    .profile_data {
-      align-items: flex-end;
-      gap: 0.25rem;
-      
-      p {
-        color: var(--palette-neutral-ultradarkest);
-    
-        span {
-          color: var(--palette-brand-main-darker);
-        }
-      }
-    }
-  } */
-
-
   .button-menu { 
     display: block;
     border-radius: 4px;
@@ -70,18 +48,4 @@
       display: none;
     }
   }
-}
-
-
-.header--logged-out {
-  /* height: calc((50vh) - (75px / 2)); */
-}
-
-.header--logged-in {
-  /* height: 42px; */
-}
-
-.header--logged-in #main-picture {
-  /* width: 2rem;
-  height: 2rem */
 }

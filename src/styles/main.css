@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  /* background-color: var(--palette-neutral-lightest); */
   background-color: var(--palette-brand-main-base);
   color: var(--palette-brand-main-dark);
 
@@ -21,16 +20,10 @@ main {
   flex-direction: column;
   gap: 3rem;
 
-  /* .propaganda, .uploadarea {
-    flex-grow: 1;
-    flex-shrink: 1;
-  } */
-
   @media screen and (min-width: 431px) {
   }
 
   @media screen and (min-width: 768px) {
-    /* min-height: 700px; */
     flex-direction: row;
     min-height: 600;
     padding-top: 4.25rem;
@@ -45,7 +38,6 @@ p.content-description {
   margin: 0 0 1.25rem;
   font-size: 16px;
   font-weight: 600;
-  /* color: var(--palette-brand-main-darker); */
   color: var(--palette-brand-main-dark);
 }
 

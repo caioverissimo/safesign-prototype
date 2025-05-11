@@ -3,32 +3,19 @@
       BRAND (Main blueish green scale) 
       main tones: #214765, #367C88 
   */
---palette-brand-main-ultradarkest:    #214765;
---palette-brand-main-ultradark:       #2C5477;
---palette-brand-main-darkest:         #366188;   
---palette-brand-main-darker:          #366788;   
---palette-brand-main-dark:            #366E88;   
---palette-brand-main-tint:            #367588;
+  --palette-brand-main-ultradarkest:    #214765;
+  --palette-brand-main-ultradark:       #2C5477;
+  --palette-brand-main-darkest:         #366188;   
+  --palette-brand-main-darker:          #366788;   
+  --palette-brand-main-dark:            #366E88;   
+  --palette-brand-main-tint:            #367588;
 
---palette-brand-main-base:            #367C88;
+  --palette-brand-main-base:            #367C88;
 
---palette-brand-main-light:           #4E9CB3;
---palette-brand-main-lighter:         #52AABA;
---palette-brand-main-lightest:        #7299AC;
---palette-brand-main-ultralight:      #AAD1D8;
-
-
-
-
-
-
-
-
-
-
-
-
-
+  --palette-brand-main-light:           #4E9CB3;
+  --palette-brand-main-lighter:         #52AABA;
+  --palette-brand-main-lightest:        #7299AC;
+  --palette-brand-main-ultralight:      #AAD1D8;
 
   /* SECONDARY (Verde de ação) */
   --palette-brand-secondary-darkest: #2DA853;

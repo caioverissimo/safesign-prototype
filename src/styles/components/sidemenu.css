@@ -138,13 +138,9 @@
 
       strong {
         font-weight: 700;
-        /* font-size: 1rem; */
-        /* color: #fff; */
       }
 
       span {
-        /* font-size: 0.75rem; */
-        /* color: rgba(255, 255, 255, 0.85); */
       }
     }
   }
@@ -169,7 +165,6 @@
 
   .stepper_item--inactive {
     .step_text {
-      /* color: var(--palette-neutral-darkest); */
     }
 
     & .stepper_picture_img--active {

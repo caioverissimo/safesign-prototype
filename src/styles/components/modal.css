@@ -11,7 +11,6 @@
   align-items: center;
   z-index: 7;
   background-color: rgb(54, 124, 136, 0.8);
-  /* background: rgba(80, 66, 92, 0.9); */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -47,19 +46,7 @@
   height: 2.75rem;
   top: -1.25rem;
   right: -1.25rem;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%; */
-  /* background-color: var(--palette-neutral-dark);
-  transition: background-color 0.75s ease-in-out; */
-
-  /* &:hover {
-    background-color: rgba(78, 156, 179, 0.9);
-    background-color: rgba(78, 156, 179, 0.9);
-    background-color: rgba(214, 109, 56, 0.8);
-  } */
-
+  
   @media screen and (min-width: 768px) {
     width: 3.5rem;
     height: 3.5rem;
